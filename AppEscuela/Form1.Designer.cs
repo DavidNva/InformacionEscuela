@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtTelefono = new System.Windows.Forms.TextBox();
@@ -47,7 +48,7 @@
             this.btnMostrarAlumno = new System.Windows.Forms.Button();
             this.btnGuardarAlumno = new System.Windows.Forms.Button();
             this.txtEscuelaProcedencia = new System.Windows.Forms.TextBox();
-            this.cmbEstadosProcedencia = new System.Windows.Forms.ComboBox();
+            this.cmbEstadoProcedencia = new System.Windows.Forms.ComboBox();
             this.cmbGenero = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txtEdad = new System.Windows.Forms.TextBox();
@@ -55,7 +56,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.txtFecNacimiento = new System.Windows.Forms.TextBox();
-            this.txtFechaIngreso = new System.Windows.Forms.TextBox();
             this.txtNumControl = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -86,8 +86,6 @@
             this.txtGradEstudDirec = new System.Windows.Forms.TextBox();
             this.txtNominaDirec = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.txtRfc = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.btnMostrarAdmin = new System.Windows.Forms.Button();
             this.btnGuardarAdmin = new System.Windows.Forms.Button();
@@ -103,6 +101,11 @@
             this.txtNumEmpleado = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
+            this.txtRfc = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.errorValidacion = new System.Windows.Forms.ErrorProvider(this.components);
+            this.dtFecNacimiento = new System.Windows.Forms.DateTimePicker();
+            this.dtFecIngreso = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -116,6 +119,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDirec)).BeginInit();
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAdmin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorValidacion)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -143,7 +147,7 @@
             this.txtTelefono.Location = new System.Drawing.Point(528, 55);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(161, 26);
-            this.txtTelefono.TabIndex = 9;
+            this.txtTelefono.TabIndex = 4;
             // 
             // txtApellidoPaterno
             // 
@@ -151,7 +155,7 @@
             this.txtApellidoPaterno.Location = new System.Drawing.Point(224, 42);
             this.txtApellidoPaterno.Name = "txtApellidoPaterno";
             this.txtApellidoPaterno.Size = new System.Drawing.Size(161, 26);
-            this.txtApellidoPaterno.TabIndex = 8;
+            this.txtApellidoPaterno.TabIndex = 1;
             // 
             // txtApellidoMaterno
             // 
@@ -159,7 +163,7 @@
             this.txtApellidoMaterno.Location = new System.Drawing.Point(224, 73);
             this.txtApellidoMaterno.Name = "txtApellidoMaterno";
             this.txtApellidoMaterno.Size = new System.Drawing.Size(161, 26);
-            this.txtApellidoMaterno.TabIndex = 7;
+            this.txtApellidoMaterno.TabIndex = 2;
             // 
             // txtCurp
             // 
@@ -167,7 +171,7 @@
             this.txtCurp.Location = new System.Drawing.Point(528, 16);
             this.txtCurp.Name = "txtCurp";
             this.txtCurp.Size = new System.Drawing.Size(161, 26);
-            this.txtCurp.TabIndex = 6;
+            this.txtCurp.TabIndex = 3;
             // 
             // txtNombre
             // 
@@ -175,7 +179,7 @@
             this.txtNombre.Location = new System.Drawing.Point(224, 10);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(161, 26);
-            this.txtNombre.TabIndex = 5;
+            this.txtNombre.TabIndex = 0;
             // 
             // label5
             // 
@@ -249,11 +253,13 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.dtFecIngreso);
+            this.tabPage1.Controls.Add(this.dtFecNacimiento);
             this.tabPage1.Controls.Add(this.dgvAlumno);
             this.tabPage1.Controls.Add(this.btnMostrarAlumno);
             this.tabPage1.Controls.Add(this.btnGuardarAlumno);
             this.tabPage1.Controls.Add(this.txtEscuelaProcedencia);
-            this.tabPage1.Controls.Add(this.cmbEstadosProcedencia);
+            this.tabPage1.Controls.Add(this.cmbEstadoProcedencia);
             this.tabPage1.Controls.Add(this.cmbGenero);
             this.tabPage1.Controls.Add(this.label12);
             this.tabPage1.Controls.Add(this.txtEdad);
@@ -261,7 +267,6 @@
             this.tabPage1.Controls.Add(this.label10);
             this.tabPage1.Controls.Add(this.label11);
             this.tabPage1.Controls.Add(this.txtFecNacimiento);
-            this.tabPage1.Controls.Add(this.txtFechaIngreso);
             this.tabPage1.Controls.Add(this.txtNumControl);
             this.tabPage1.Controls.Add(this.label6);
             this.tabPage1.Controls.Add(this.label7);
@@ -305,6 +310,7 @@
             this.btnGuardarAlumno.TabIndex = 22;
             this.btnGuardarAlumno.Text = "Guardar";
             this.btnGuardarAlumno.UseVisualStyleBackColor = true;
+            this.btnGuardarAlumno.Click += new System.EventHandler(this.btnGuardarAlumno_Click);
             // 
             // txtEscuelaProcedencia
             // 
@@ -312,15 +318,15 @@
             this.txtEscuelaProcedencia.Location = new System.Drawing.Point(601, 75);
             this.txtEscuelaProcedencia.Name = "txtEscuelaProcedencia";
             this.txtEscuelaProcedencia.Size = new System.Drawing.Size(161, 26);
-            this.txtEscuelaProcedencia.TabIndex = 21;
+            this.txtEscuelaProcedencia.TabIndex = 11;
             // 
-            // cmbEstadosProcedencia
+            // cmbEstadoProcedencia
             // 
-            this.cmbEstadosProcedencia.FormattingEnabled = true;
-            this.cmbEstadosProcedencia.Location = new System.Drawing.Point(601, 44);
-            this.cmbEstadosProcedencia.Name = "cmbEstadosProcedencia";
-            this.cmbEstadosProcedencia.Size = new System.Drawing.Size(161, 28);
-            this.cmbEstadosProcedencia.TabIndex = 20;
+            this.cmbEstadoProcedencia.FormattingEnabled = true;
+            this.cmbEstadoProcedencia.Location = new System.Drawing.Point(601, 44);
+            this.cmbEstadoProcedencia.Name = "cmbEstadoProcedencia";
+            this.cmbEstadoProcedencia.Size = new System.Drawing.Size(161, 28);
+            this.cmbEstadoProcedencia.TabIndex = 10;
             // 
             // cmbGenero
             // 
@@ -328,7 +334,7 @@
             this.cmbGenero.Location = new System.Drawing.Point(196, 79);
             this.cmbGenero.Name = "cmbGenero";
             this.cmbGenero.Size = new System.Drawing.Size(161, 28);
-            this.cmbGenero.TabIndex = 19;
+            this.cmbGenero.TabIndex = 7;
             // 
             // label12
             // 
@@ -347,7 +353,7 @@
             this.txtEdad.Location = new System.Drawing.Point(196, 113);
             this.txtEdad.Name = "txtEdad";
             this.txtEdad.Size = new System.Drawing.Size(161, 26);
-            this.txtEdad.TabIndex = 16;
+            this.txtEdad.TabIndex = 8;
             // 
             // label9
             // 
@@ -385,18 +391,10 @@
             // txtFecNacimiento
             // 
             this.txtFecNacimiento.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFecNacimiento.Location = new System.Drawing.Point(196, 44);
+            this.txtFecNacimiento.Location = new System.Drawing.Point(375, 153);
             this.txtFecNacimiento.Name = "txtFecNacimiento";
             this.txtFecNacimiento.Size = new System.Drawing.Size(161, 26);
             this.txtFecNacimiento.TabIndex = 11;
-            // 
-            // txtFechaIngreso
-            // 
-            this.txtFechaIngreso.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFechaIngreso.Location = new System.Drawing.Point(601, 12);
-            this.txtFechaIngreso.Name = "txtFechaIngreso";
-            this.txtFechaIngreso.Size = new System.Drawing.Size(161, 26);
-            this.txtFechaIngreso.TabIndex = 10;
             // 
             // txtNumControl
             // 
@@ -404,7 +402,7 @@
             this.txtNumControl.Location = new System.Drawing.Point(196, 12);
             this.txtNumControl.Name = "txtNumControl";
             this.txtNumControl.Size = new System.Drawing.Size(161, 26);
-            this.txtNumControl.TabIndex = 9;
+            this.txtNumControl.TabIndex = 5;
             // 
             // label6
             // 
@@ -721,25 +719,6 @@
             this.label19.TabIndex = 27;
             this.label19.Text = "Número de nómina:";
             // 
-            // txtRfc
-            // 
-            this.txtRfc.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRfc.Location = new System.Drawing.Point(53, 6);
-            this.txtRfc.Name = "txtRfc";
-            this.txtRfc.Size = new System.Drawing.Size(161, 26);
-            this.txtRfc.TabIndex = 22;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.label16.Location = new System.Drawing.Point(6, 10);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(35, 18);
-            this.label16.TabIndex = 20;
-            this.label16.Text = "Rfc:";
-            // 
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.btnMostrarAdmin);
@@ -902,6 +881,45 @@
             this.label27.TabIndex = 40;
             this.label27.Text = "adscripción:";
             // 
+            // txtRfc
+            // 
+            this.txtRfc.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRfc.Location = new System.Drawing.Point(53, 6);
+            this.txtRfc.Name = "txtRfc";
+            this.txtRfc.Size = new System.Drawing.Size(161, 26);
+            this.txtRfc.TabIndex = 22;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.label16.Location = new System.Drawing.Point(6, 10);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(35, 18);
+            this.label16.TabIndex = 20;
+            this.label16.Text = "Rfc:";
+            // 
+            // errorValidacion
+            // 
+            this.errorValidacion.ContainerControl = this;
+            // 
+            // dtFecNacimiento
+            // 
+            this.dtFecNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtFecNacimiento.Location = new System.Drawing.Point(196, 46);
+            this.dtFecNacimiento.Name = "dtFecNacimiento";
+            this.dtFecNacimiento.Size = new System.Drawing.Size(161, 26);
+            this.dtFecNacimiento.TabIndex = 6;
+            // 
+            // dtFecIngreso
+            // 
+            this.dtFecIngreso.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtFecIngreso.Location = new System.Drawing.Point(601, 12);
+            this.dtFecIngreso.Name = "dtFecIngreso";
+            this.dtFecIngreso.Size = new System.Drawing.Size(161, 26);
+            this.dtFecIngreso.TabIndex = 9;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -932,6 +950,7 @@
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAdmin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorValidacion)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -956,7 +975,7 @@
         private System.Windows.Forms.Button btnMostrarAlumno;
         private System.Windows.Forms.Button btnGuardarAlumno;
         private System.Windows.Forms.TextBox txtEscuelaProcedencia;
-        private System.Windows.Forms.ComboBox cmbEstadosProcedencia;
+        private System.Windows.Forms.ComboBox cmbEstadoProcedencia;
         private System.Windows.Forms.ComboBox cmbGenero;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtEdad;
@@ -964,7 +983,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtFecNacimiento;
-        private System.Windows.Forms.TextBox txtFechaIngreso;
         private System.Windows.Forms.TextBox txtNumControl;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
@@ -1012,6 +1030,9 @@
         private System.Windows.Forms.TextBox txtNumEmpleado;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.ErrorProvider errorValidacion;
+        private System.Windows.Forms.DateTimePicker dtFecNacimiento;
+        private System.Windows.Forms.DateTimePicker dtFecIngreso;
     }
 }
 
