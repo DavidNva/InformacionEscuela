@@ -16,60 +16,66 @@ namespace AppEscuela
         {
             InitializeComponent();
         }
-        
+        //-----------------------------------------------------------------------------------------
         private void btnGuardarAlumno_Click(object sender, EventArgs e)
         {
-            if (ValidarNombre() == false)
-            {
-                return;
-            }
-            if (ValidarAPaterno() == false)
-            {
-                return;
-            }
-            if (ValidarAMaterno() == false)
-            {
-                return;
-            }
-            if (ValidarCurp() == false)
-            {
-                return;
-            }
-            if (ValidarTelefono() == false)
-            {
-                return;
-            }
-            if (ValidarNumControl() == false)
-            {
-                return;
-            }
-            //if (ValidarFecNacimiento() == false)
-            //{
-            //    return;
-            //}
-            if (ValidarGenero() == false)
-            {
-                return;
-            }
-            if (ValidarEdad() == false)
-            {
-                return;
-            }
-            //if (ValidarFecIngreso() == false)
-            //{
-            //    return;
-            //}
-            if (ValidarEstadoProcedencia() == false)
-            {
-                return;
-            }
-            if (ValidarEscuelaProcedencia() == false)
-            {
-                return;
-            }
+            //Los metodos de las siguietes validaciones se encuentran en la parte inferior
+            RecopilacionValidacionPersona();
 
+            if (ValidarNumControl() == false)//Alumno
+            {
+                return;
+            }
+            //if (ValidarFecNacimiento() == false)////Alumno
+            //{
+            //    return;
+            //}
+            if (ValidarGenero() == false)//Alumno
+            {
+                return;
+            }
+            if (ValidarEdad() == false)//Alumno
+            {
+                return;
+            }
+            //if (ValidarFecIngreso() == false)////Alumno
+            //{
+            //    return;
+            //}
+            if (ValidarEstadoProcedencia() == false)//Alumno
+            {
+                return;
+            }
+            if (ValidarEscuelaProcedencia() == false)//Alumno
+            {
+                return;
+            }
+            MessageBox.Show("Los datos se guardaron correctamente", "Confirmacion Guardar Datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-        //Creacion de validaciones de todos los campos
+        private void RecopilacionValidacionPersona()
+        {
+            if (ValidarNombre() == false)//Persona
+            {
+                return;
+            }
+            if (ValidarAPaterno() == false)//Persona
+            {
+                return;
+            }
+            if (ValidarAMaterno() == false)//Persona
+            {
+                return;
+            }
+            if (ValidarCurp() == false)//Persona
+            {
+                return;
+            }
+            if (ValidarTelefono() == false)//Persona
+            {
+                return;
+            }
+        }
+        //Creacion de validaciones de Persona
         private bool ValidarNombre()
         {
             if (string.IsNullOrEmpty(txtNombre.Text))//Si esta vacio o nulo, enviar un error
@@ -111,10 +117,9 @@ namespace AppEscuela
         }
         private bool ValidarCurp()
         {
-            int curp;
-            if(!int.TryParse(txtCurp.Text, out curp) || txtCurp.Text == "")
+            if (string.IsNullOrEmpty(txtCurp.Text))
             {
-                errorValidacion.SetError(txtCurp, "Solo se permite números enteros o está vacio");
+                errorValidacion.SetError(txtCurp, "Debes ingresar tu Curp");
                 return false;
             }
             else
@@ -128,7 +133,7 @@ namespace AppEscuela
             int telefono;
             if (!int.TryParse(txtTelefono.Text, out telefono) || txtTelefono.Text == "")
             {
-                errorValidacion.SetError(txtTelefono, "Debes ingresar tu numero de telefono");
+                errorValidacion.SetError(txtTelefono, "Debes ingresar tu número de télefono");
                 return false;
             }
             else
@@ -137,12 +142,13 @@ namespace AppEscuela
                 return true;
             }
         }
+        //Creacion de validaciones de Alumno
         private bool ValidarNumControl()
         {
             int telefono;
             if (!int.TryParse(txtNumControl.Text, out telefono) || txtNumControl.Text == "")
             {
-                errorValidacion.SetError(txtNumControl, "Debes ingresar tu numero de control");
+                errorValidacion.SetError(txtNumControl, "Debes ingresar tu número de control");
                 return false;
             }
             else
@@ -169,7 +175,7 @@ namespace AppEscuela
         {
             if (cmbGenero.SelectedItem == null)
             {
-                errorValidacion.SetError(cmbGenero, "Debes elegir una género");
+                errorValidacion.SetError(cmbGenero, "Debes elegir un género");
                 return false;
             }
             else
@@ -210,7 +216,7 @@ namespace AppEscuela
         {
             if (cmbEstadoProcedencia.SelectedItem == null)
             {
-                errorValidacion.SetError(cmbEstadoProcedencia, "Debes elegir una género");
+                errorValidacion.SetError(cmbEstadoProcedencia, "Debes elegir tu Estado de Procedencia");
                 return false;
             }
             else
@@ -219,11 +225,12 @@ namespace AppEscuela
                 return true;
             }
         }
+       
         private bool ValidarEscuelaProcedencia()
         {
             if (string.IsNullOrEmpty(txtEscuelaProcedencia.Text))
             {
-                errorValidacion.SetError(txtEscuelaProcedencia, "Debes ingresar un nombre");
+                errorValidacion.SetError(txtEscuelaProcedencia, "Debes ingresar tu Escuela de Procedencia");
                 return false;
             }
             else
@@ -232,6 +239,285 @@ namespace AppEscuela
                 return true;
             }
         }
+        //Creacion de validaciones de Empleado
+        private bool ValidarRfc()
+        {
+            if (string.IsNullOrEmpty(txtRfc.Text))
+            {
+                errorValidacion.SetError(txtRfc, "Debes ingresar tu Rfc");
+                return false;
+            }
+            else
+            {
+                errorValidacion.SetError(txtRfc, "");
+                return true;
+            }
+        }
+        //Validaciones de Docente
+        private bool ValidarNominaDocente()
+        {
+            int nomina;
+            if (!int.TryParse(txtNominaDocente.Text, out nomina) || txtNominaDocente.Text == "")
+            {
+                errorValidacion.SetError(txtNominaDocente, "Debes ingresar tu número de nómina");
+                return false;
+            }
+            else
+            {
+                errorValidacion.SetError(txtNominaDocente, "");
+                return true;
+            }
+        }
 
+        private bool ValidarGradEstudiosDocente()
+        {
+            if (string.IsNullOrEmpty(txtGradEstudDocente.Text))
+            {
+                errorValidacion.SetError(txtGradEstudDocente, "Ingresa tu grado de estudios");
+                return false;
+            }
+            else
+            {
+                errorValidacion.SetError(txtGradEstudDocente, "");
+                return true;
+            }
+        }
+        private bool ValidarAreaAcademica()
+        {
+            if (string.IsNullOrEmpty(txtAreaAcademica.Text))
+            {
+                errorValidacion.SetError(txtAreaAcademica, "Debes ingresar tu área académica");
+                return false;
+            }
+            else
+            {
+                errorValidacion.SetError(txtAreaAcademica, "");
+                return true;
+            }
+        }
+        //Validaciones Directivo
+        private bool ValidarNominaDirec()
+        {
+            int nomina;
+            if (!int.TryParse(txtNominaDirec.Text, out nomina) || txtNominaDirec.Text == "")
+            {
+                errorValidacion.SetError(txtNominaDirec, "Debes ingresar tu número de nómina");
+                return false;
+            }
+            else
+            {
+                errorValidacion.SetError(txtNominaDirec, "");
+                return true;
+            }
+        }
+
+        private bool ValidarGradEstudiosDirec()
+        {
+            if (string.IsNullOrEmpty(txtGradEstudDirec.Text))
+            {
+                errorValidacion.SetError(txtGradEstudDirec, "Ingresa tu grado de estudios");
+                return false;
+            }
+            else
+            {
+                errorValidacion.SetError(txtGradEstudDirec, "");
+                return true;
+            }
+        }
+        private bool ValidarDireccionDirec()
+        {
+            if (string.IsNullOrEmpty(txtDireccionDirec.Text))
+            {
+                errorValidacion.SetError(txtDireccionDirec, "Ingresa tu dirección");
+                return false;
+            }
+            else
+            {
+                errorValidacion.SetError(txtDireccionDirec, "");
+                return true;
+            }
+        }
+        private bool ValidarPuestoJefatura()
+        {
+            if (string.IsNullOrEmpty(txtPuesto.Text))
+            {
+                errorValidacion.SetError(txtPuesto, "Ingresa tu Puesto o Jefatura");
+                return false;
+            }
+            else
+            {
+                errorValidacion.SetError(txtPuesto, "");
+                return true;
+            }
+        }
+        private bool ValidarEmpleadosACargo()
+        {
+            int empleados;
+            if (!int.TryParse(txtEmpleadosACargo.Text, out empleados) || txtEmpleadosACargo.Text == "")
+            {
+                errorValidacion.SetError(txtEmpleadosACargo, "Ingresa el numero de empleados a cargo");
+                return false;
+            }
+            else
+            {
+                errorValidacion.SetError(txtEmpleadosACargo, "");
+                return true;
+            }
+        }
+        //Validaciones administrativo
+        private bool ValidarNumEmpleado()
+        {
+            int numEmpleado;
+            if (!int.TryParse(txtNumEmpleado.Text, out numEmpleado) || txtNumEmpleado.Text == "")
+            {
+                errorValidacion.SetError(txtNumEmpleado, "Ingresa tu número de empleado");
+                return false;
+            }
+            else
+            {
+                errorValidacion.SetError(txtNumEmpleado, "");
+                return true;
+            }
+        }
+        private bool ValidarDepartamentoAdscripcion()
+        {
+            if (string.IsNullOrEmpty(txtDepartAdscripcion.Text))
+            {
+                errorValidacion.SetError(txtDepartAdscripcion, "Ingresa tu Departamento de Adscripción");
+                return false;
+            }
+            else
+            {
+                errorValidacion.SetError(txtDepartAdscripcion, "");
+                return true;
+            }
+        }
+        private bool ValidarDireccionAdmin()
+        {
+            if (string.IsNullOrEmpty(txtDireccionAdmin.Text))
+            {
+                errorValidacion.SetError(txtDireccionAdmin, "Ingresa tu dirección");
+                return false;
+            }
+            else
+            {
+                errorValidacion.SetError(txtDireccionAdmin, "");
+                return true;
+            }
+        }
+        private bool ValidarSeguroSocial()
+        {
+            if (string.IsNullOrEmpty(txtSeguroSocial.Text))
+            {
+                errorValidacion.SetError(txtSeguroSocial, "Ingresa tu seguro social");
+                return false;
+            }
+            else
+            {
+                errorValidacion.SetError(txtSeguroSocial, "");
+                return true;
+            }
+        }
+        private bool ValidarCorreo()
+        {
+            if (string.IsNullOrEmpty(txtCorreo.Text))
+            {
+                errorValidacion.SetError(txtCorreo, "Ingresa tu correo");
+                return false;
+            }
+            else
+            {
+                errorValidacion.SetError(txtCorreo, "");
+                return true;
+            }
+        }
+        //----------------------------------------------------------------------------------------------
+        private void btnGuardarDocente_Click(object sender, EventArgs e)
+        {
+            //Los metodos de las siguietes validaciones se encuentran en la parte inferior
+            RecopilacionValidacionPersona();//5
+            if (ValidarRfc() == false)//Empleado
+            {
+                return;
+            }
+            if (ValidarNominaDocente() == false)//Docente
+            {
+                return;
+            }
+            if (ValidarGradEstudiosDocente() == false)//Docente
+            {
+                return;
+            }
+            if (ValidarAreaAcademica() == false)//Docente
+            {
+                return;
+            }
+            MessageBox.Show("Los datos se guardaron correctamente", "Confirmacion Guardar Datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        
+        //-----------------------------------------------------------------------------------------------
+        private void btnGuardarDirec_Click(object sender, EventArgs e)
+        {
+            //Los metodos de las siguietes validaciones se encuentran en la parte inferior
+            RecopilacionValidacionPersona();//5
+            if (ValidarRfc() == false)//Empleado
+            {
+                return;
+            }
+            if (ValidarNominaDirec() == false)//Direc
+            {
+                return;
+            }
+            if (ValidarGradEstudiosDirec() == false)//Direc
+            {
+                return;
+            }
+            if (ValidarDireccionDirec() == false)//Direc
+            {
+                return;
+            }
+            if (ValidarPuestoJefatura() == false)//Direc
+            {
+                return;
+            }
+            if (ValidarEmpleadosACargo() == false)//Direc
+            {
+                return;
+            }
+            MessageBox.Show("Los datos se guardaron correctamente", "Confirmacion Guardar Datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+       
+        //------------------------------------------------------------------------------------------------
+        private void btnGuardarAdmin_Click(object sender, EventArgs e)
+        {
+            //Los metodos de las siguietes validaciones se encuentran en la parte inferior
+            
+            RecopilacionValidacionPersona();//5
+            if (ValidarRfc() == false)//Empleado
+            {
+                return;
+            }
+            if (ValidarNumEmpleado() == false)//Admin
+            {
+                return;
+            }
+            else if (ValidarDepartamentoAdscripcion() == false)//Admin
+            {
+                return;
+            }
+            else if (ValidarDireccionAdmin() == false)//Admin
+            {
+                return;
+            }
+            else if (ValidarSeguroSocial() == false)//Admin
+            {
+                return;
+            }
+            else if (ValidarCorreo() == false)//Admin
+            {
+                return;
+            }
+            MessageBox.Show("Los datos se guardaron correctamente", "Confirmacion Guardar Datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

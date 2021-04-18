@@ -8,7 +8,7 @@ namespace AppEscuela
 {
     class Administrativo:Empleado
     {
-        public string numEmpleado { get; set; }
+        public int numEmpleado { get; set; }
         public string departamentoAdscripcion { get; set; }
         public string direccion { get; set; }
         public string seguroSocial { get; set; }

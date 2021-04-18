@@ -44,6 +44,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.dtFecIngreso = new System.Windows.Forms.DateTimePicker();
+            this.dtFecNacimiento = new System.Windows.Forms.DateTimePicker();
             this.dgvAlumno = new System.Windows.Forms.DataGridView();
             this.btnMostrarAlumno = new System.Windows.Forms.Button();
             this.btnGuardarAlumno = new System.Windows.Forms.Button();
@@ -55,7 +57,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.txtFecNacimiento = new System.Windows.Forms.TextBox();
             this.txtNumControl = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -104,8 +105,6 @@
             this.txtRfc = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.errorValidacion = new System.Windows.Forms.ErrorProvider(this.components);
-            this.dtFecNacimiento = new System.Windows.Forms.DateTimePicker();
-            this.dtFecIngreso = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -266,7 +265,6 @@
             this.tabPage1.Controls.Add(this.label9);
             this.tabPage1.Controls.Add(this.label10);
             this.tabPage1.Controls.Add(this.label11);
-            this.tabPage1.Controls.Add(this.txtFecNacimiento);
             this.tabPage1.Controls.Add(this.txtNumControl);
             this.tabPage1.Controls.Add(this.label6);
             this.tabPage1.Controls.Add(this.label7);
@@ -278,6 +276,22 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Alumno";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // dtFecIngreso
+            // 
+            this.dtFecIngreso.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtFecIngreso.Location = new System.Drawing.Point(601, 12);
+            this.dtFecIngreso.Name = "dtFecIngreso";
+            this.dtFecIngreso.Size = new System.Drawing.Size(161, 26);
+            this.dtFecIngreso.TabIndex = 9;
+            // 
+            // dtFecNacimiento
+            // 
+            this.dtFecNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtFecNacimiento.Location = new System.Drawing.Point(196, 46);
+            this.dtFecNacimiento.Name = "dtFecNacimiento";
+            this.dtFecNacimiento.Size = new System.Drawing.Size(161, 26);
+            this.dtFecNacimiento.TabIndex = 6;
             // 
             // dgvAlumno
             // 
@@ -323,6 +337,8 @@
             // cmbEstadoProcedencia
             // 
             this.cmbEstadoProcedencia.FormattingEnabled = true;
+            this.cmbEstadoProcedencia.Items.AddRange(new object[] {
+            "1214"});
             this.cmbEstadoProcedencia.Location = new System.Drawing.Point(601, 44);
             this.cmbEstadoProcedencia.Name = "cmbEstadoProcedencia";
             this.cmbEstadoProcedencia.Size = new System.Drawing.Size(161, 28);
@@ -331,6 +347,8 @@
             // cmbGenero
             // 
             this.cmbGenero.FormattingEnabled = true;
+            this.cmbGenero.Items.AddRange(new object[] {
+            "112"});
             this.cmbGenero.Location = new System.Drawing.Point(196, 79);
             this.cmbGenero.Name = "cmbGenero";
             this.cmbGenero.Size = new System.Drawing.Size(161, 28);
@@ -387,14 +405,6 @@
             this.label11.Size = new System.Drawing.Size(184, 18);
             this.label11.TabIndex = 12;
             this.label11.Text = "Estado de Procedencia:";
-            // 
-            // txtFecNacimiento
-            // 
-            this.txtFecNacimiento.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFecNacimiento.Location = new System.Drawing.Point(375, 153);
-            this.txtFecNacimiento.Name = "txtFecNacimiento";
-            this.txtFecNacimiento.Size = new System.Drawing.Size(161, 26);
-            this.txtFecNacimiento.TabIndex = 11;
             // 
             // txtNumControl
             // 
@@ -503,6 +513,7 @@
             this.btnGuardarDocente.TabIndex = 39;
             this.btnGuardarDocente.Text = "Guardar";
             this.btnGuardarDocente.UseVisualStyleBackColor = true;
+            this.btnGuardarDocente.Click += new System.EventHandler(this.btnGuardarDocente_Click);
             // 
             // dgvDocente
             // 
@@ -615,6 +626,7 @@
             this.btnGuardarDirec.TabIndex = 38;
             this.btnGuardarDirec.Text = "Guardar";
             this.btnGuardarDirec.UseVisualStyleBackColor = true;
+            this.btnGuardarDirec.Click += new System.EventHandler(this.btnGuardarDirec_Click);
             // 
             // dgvDirec
             // 
@@ -766,6 +778,7 @@
             this.btnGuardarAdmin.TabIndex = 38;
             this.btnGuardarAdmin.Text = "Guardar";
             this.btnGuardarAdmin.UseVisualStyleBackColor = true;
+            this.btnGuardarAdmin.Click += new System.EventHandler(this.btnGuardarAdmin_Click);
             // 
             // dgvAdmin
             // 
@@ -904,22 +917,6 @@
             // 
             this.errorValidacion.ContainerControl = this;
             // 
-            // dtFecNacimiento
-            // 
-            this.dtFecNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtFecNacimiento.Location = new System.Drawing.Point(196, 46);
-            this.dtFecNacimiento.Name = "dtFecNacimiento";
-            this.dtFecNacimiento.Size = new System.Drawing.Size(161, 26);
-            this.dtFecNacimiento.TabIndex = 6;
-            // 
-            // dtFecIngreso
-            // 
-            this.dtFecIngreso.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtFecIngreso.Location = new System.Drawing.Point(601, 12);
-            this.dtFecIngreso.Name = "dtFecIngreso";
-            this.dtFecIngreso.Size = new System.Drawing.Size(161, 26);
-            this.dtFecIngreso.TabIndex = 9;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -982,7 +979,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtFecNacimiento;
         private System.Windows.Forms.TextBox txtNumControl;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;

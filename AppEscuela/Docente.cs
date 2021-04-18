@@ -8,8 +8,10 @@ namespace AppEscuela
 {
     class Docente:Empleado
     {
-        public string numNomina { get; set; }
+        public int numNomina { get; set; }
         public string gradEstudios { get; set; }
         public string areaAcademica { get; set; }
+
+        
     }
 }

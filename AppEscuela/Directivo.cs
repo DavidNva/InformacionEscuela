@@ -8,10 +8,10 @@ namespace AppEscuela
 {
     class Directivo:Empleado
     {
-        public string numNomina { get; set; }
+        public int numNomina { get; set; }
         public string gradEstudios { get; set; }
         public string direccion { get; set; }
         public string puestoJefatura { get; set; }
-        public string EmpleadosCargo { get; set; }
+        public int EmpleadosCargo { get; set; }
     }
 }
