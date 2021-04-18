@@ -44,9 +44,22 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnNuevo = new System.Windows.Forms.Button();
             this.dtFecIngreso = new System.Windows.Forms.DateTimePicker();
             this.dtFecNacimiento = new System.Windows.Forms.DateTimePicker();
             this.dgvAlumno = new System.Windows.Forms.DataGridView();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnMostrarAlumno = new System.Windows.Forms.Button();
             this.btnGuardarAlumno = new System.Windows.Forms.Button();
             this.txtEscuelaProcedencia = new System.Windows.Forms.TextBox();
@@ -64,6 +77,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btnNuevoDocente = new System.Windows.Forms.Button();
             this.btnMostrarDocente = new System.Windows.Forms.Button();
             this.btnGuardarDocente = new System.Windows.Forms.Button();
             this.dgvDocente = new System.Windows.Forms.DataGridView();
@@ -77,6 +91,16 @@
             this.btnMostrarDirec = new System.Windows.Forms.Button();
             this.btnGuardarDirec = new System.Windows.Forms.Button();
             this.dgvDirec = new System.Windows.Forms.DataGridView();
+            this.columNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columPaterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columMaterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columCurp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtEmpleadosACargo = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.txtDireccionDirec = new System.Windows.Forms.TextBox();
@@ -105,18 +129,24 @@
             this.txtRfc = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.errorValidacion = new System.Windows.Forms.ErrorProvider(this.components);
-            this.columNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columPaterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columMaterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columCurp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column37 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -265,6 +295,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btnNuevo);
             this.tabPage1.Controls.Add(this.dtFecIngreso);
             this.tabPage1.Controls.Add(this.dtFecNacimiento);
             this.tabPage1.Controls.Add(this.dgvAlumno);
@@ -290,6 +321,18 @@
             this.tabPage1.Text = "Alumno";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // btnNuevo
+            // 
+            this.btnNuevo.FlatAppearance.BorderSize = 0;
+            this.btnNuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevo.Location = new System.Drawing.Point(679, 121);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(105, 26);
+            this.btnNuevo.TabIndex = 25;
+            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.UseVisualStyleBackColor = true;
+            // 
             // dtFecIngreso
             // 
             this.dtFecIngreso.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -308,18 +351,117 @@
             // 
             // dgvAlumno
             // 
+            this.dgvAlumno.AllowUserToAddRows = false;
+            this.dgvAlumno.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvAlumno.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAlumno.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column9,
+            this.Column10,
+            this.Column11,
+            this.Column12,
+            this.Column13,
+            this.Column14,
+            this.Column15,
+            this.Column16,
+            this.Column17,
+            this.Column18,
+            this.Column19,
+            this.Column20});
             this.dgvAlumno.Location = new System.Drawing.Point(11, 188);
             this.dgvAlumno.Name = "dgvAlumno";
             this.dgvAlumno.Size = new System.Drawing.Size(778, 197);
             this.dgvAlumno.TabIndex = 24;
+            // 
+            // Column9
+            // 
+            this.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column9.HeaderText = "Nombre";
+            this.Column9.Name = "Column9";
+            this.Column9.Width = 93;
+            // 
+            // Column10
+            // 
+            this.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column10.HeaderText = "Apellido Paterno";
+            this.Column10.Name = "Column10";
+            this.Column10.Width = 142;
+            // 
+            // Column11
+            // 
+            this.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column11.HeaderText = "Apellido Materno";
+            this.Column11.Name = "Column11";
+            this.Column11.Width = 148;
+            // 
+            // Column12
+            // 
+            this.Column12.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column12.HeaderText = "Curp";
+            this.Column12.Name = "Column12";
+            this.Column12.Width = 70;
+            // 
+            // Column13
+            // 
+            this.Column13.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column13.HeaderText = "Teléfono";
+            this.Column13.Name = "Column13";
+            this.Column13.Width = 96;
+            // 
+            // Column14
+            // 
+            this.Column14.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column14.HeaderText = "Número de Control";
+            this.Column14.Name = "Column14";
+            this.Column14.Width = 159;
+            // 
+            // Column15
+            // 
+            this.Column15.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column15.HeaderText = "Fecha de Nacimiento";
+            this.Column15.Name = "Column15";
+            this.Column15.Width = 175;
+            // 
+            // Column16
+            // 
+            this.Column16.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column16.HeaderText = "Género";
+            this.Column16.Name = "Column16";
+            this.Column16.Width = 91;
+            // 
+            // Column17
+            // 
+            this.Column17.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column17.HeaderText = "Edad";
+            this.Column17.Name = "Column17";
+            this.Column17.Width = 72;
+            // 
+            // Column18
+            // 
+            this.Column18.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column18.HeaderText = "Fecha de Ingreso";
+            this.Column18.Name = "Column18";
+            this.Column18.Width = 149;
+            // 
+            // Column19
+            // 
+            this.Column19.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column19.HeaderText = "Estado de Procedencia";
+            this.Column19.Name = "Column19";
+            this.Column19.Width = 188;
+            // 
+            // Column20
+            // 
+            this.Column20.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column20.HeaderText = "Escuela de Procedencia";
+            this.Column20.Name = "Column20";
+            this.Column20.Width = 195;
             // 
             // btnMostrarAlumno
             // 
             this.btnMostrarAlumno.FlatAppearance.BorderSize = 0;
             this.btnMostrarAlumno.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnMostrarAlumno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMostrarAlumno.Location = new System.Drawing.Point(580, 121);
+            this.btnMostrarAlumno.Location = new System.Drawing.Point(553, 121);
             this.btnMostrarAlumno.Name = "btnMostrarAlumno";
             this.btnMostrarAlumno.Size = new System.Drawing.Size(105, 26);
             this.btnMostrarAlumno.TabIndex = 23;
@@ -332,7 +474,7 @@
             this.btnGuardarAlumno.FlatAppearance.BorderSize = 0;
             this.btnGuardarAlumno.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnGuardarAlumno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardarAlumno.Location = new System.Drawing.Point(431, 121);
+            this.btnGuardarAlumno.Location = new System.Drawing.Point(408, 121);
             this.btnGuardarAlumno.Name = "btnGuardarAlumno";
             this.btnGuardarAlumno.Size = new System.Drawing.Size(105, 26);
             this.btnGuardarAlumno.TabIndex = 22;
@@ -351,8 +493,6 @@
             // cmbEstadoProcedencia
             // 
             this.cmbEstadoProcedencia.FormattingEnabled = true;
-            this.cmbEstadoProcedencia.Items.AddRange(new object[] {
-            "1214"});
             this.cmbEstadoProcedencia.Location = new System.Drawing.Point(601, 44);
             this.cmbEstadoProcedencia.Name = "cmbEstadoProcedencia";
             this.cmbEstadoProcedencia.Size = new System.Drawing.Size(161, 28);
@@ -361,8 +501,6 @@
             // cmbGenero
             // 
             this.cmbGenero.FormattingEnabled = true;
-            this.cmbGenero.Items.AddRange(new object[] {
-            "112"});
             this.cmbGenero.Location = new System.Drawing.Point(196, 79);
             this.cmbGenero.Name = "cmbGenero";
             this.cmbGenero.Size = new System.Drawing.Size(161, 28);
@@ -488,6 +626,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.btnNuevoDocente);
             this.tabPage3.Controls.Add(this.btnMostrarDocente);
             this.tabPage3.Controls.Add(this.btnGuardarDocente);
             this.tabPage3.Controls.Add(this.dgvDocente);
@@ -505,12 +644,25 @@
             this.tabPage3.Text = "Docente";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // btnNuevoDocente
+            // 
+            this.btnNuevoDocente.FlatAppearance.BorderSize = 0;
+            this.btnNuevoDocente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnNuevoDocente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevoDocente.Location = new System.Drawing.Point(628, 45);
+            this.btnNuevoDocente.Name = "btnNuevoDocente";
+            this.btnNuevoDocente.Size = new System.Drawing.Size(105, 26);
+            this.btnNuevoDocente.TabIndex = 41;
+            this.btnNuevoDocente.Text = "Nuevo";
+            this.btnNuevoDocente.UseVisualStyleBackColor = true;
+            this.btnNuevoDocente.Click += new System.EventHandler(this.btnNuevoDocente_Click);
+            // 
             // btnMostrarDocente
             // 
             this.btnMostrarDocente.FlatAppearance.BorderSize = 0;
             this.btnMostrarDocente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnMostrarDocente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMostrarDocente.Location = new System.Drawing.Point(583, 45);
+            this.btnMostrarDocente.Location = new System.Drawing.Point(517, 45);
             this.btnMostrarDocente.Name = "btnMostrarDocente";
             this.btnMostrarDocente.Size = new System.Drawing.Size(105, 26);
             this.btnMostrarDocente.TabIndex = 40;
@@ -523,7 +675,7 @@
             this.btnGuardarDocente.FlatAppearance.BorderSize = 0;
             this.btnGuardarDocente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnGuardarDocente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardarDocente.Location = new System.Drawing.Point(434, 45);
+            this.btnGuardarDocente.Location = new System.Drawing.Point(401, 45);
             this.btnGuardarDocente.Name = "btnGuardarDocente";
             this.btnGuardarDocente.Size = new System.Drawing.Size(105, 26);
             this.btnGuardarDocente.TabIndex = 39;
@@ -533,17 +685,18 @@
             // 
             // dgvDocente
             // 
+            this.dgvDocente.AllowUserToAddRows = false;
             this.dgvDocente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDocente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDocente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column3,
+            this.Column37,
             this.Column4,
             this.Column5,
             this.Column6,
             this.Column7,
-            this.Column8,
-            this.Column2});
+            this.Column8});
             this.dgvDocente.Location = new System.Drawing.Point(9, 116);
             this.dgvDocente.Name = "dgvDocente";
             this.dgvDocente.Size = new System.Drawing.Size(761, 205);
@@ -656,16 +809,94 @@
             // 
             // dgvDirec
             // 
+            this.dgvDirec.AllowUserToAddRows = false;
+            this.dgvDirec.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDirec.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDirec.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.columNombre,
             this.columPaterno,
             this.columMaterno,
-            this.columCurp});
-            this.dgvDirec.Location = new System.Drawing.Point(11, 112);
+            this.columCurp,
+            this.Column21,
+            this.Column22,
+            this.Column23,
+            this.Column24,
+            this.Column25,
+            this.Column26});
+            this.dgvDirec.Location = new System.Drawing.Point(11, 116);
             this.dgvDirec.Name = "dgvDirec";
             this.dgvDirec.Size = new System.Drawing.Size(761, 205);
             this.dgvDirec.TabIndex = 37;
+            // 
+            // columNombre
+            // 
+            this.columNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.columNombre.HeaderText = "Nombre";
+            this.columNombre.Name = "columNombre";
+            this.columNombre.Width = 93;
+            // 
+            // columPaterno
+            // 
+            this.columPaterno.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.columPaterno.HeaderText = "Apellido Paterno";
+            this.columPaterno.Name = "columPaterno";
+            this.columPaterno.Width = 142;
+            // 
+            // columMaterno
+            // 
+            this.columMaterno.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.columMaterno.HeaderText = "Apellido Materno";
+            this.columMaterno.Name = "columMaterno";
+            this.columMaterno.Width = 148;
+            // 
+            // columCurp
+            // 
+            this.columCurp.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.columCurp.HeaderText = "Curp";
+            this.columCurp.Name = "columCurp";
+            this.columCurp.Width = 70;
+            // 
+            // Column21
+            // 
+            this.Column21.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column21.HeaderText = "Teléfono";
+            this.Column21.Name = "Column21";
+            this.Column21.Width = 96;
+            // 
+            // Column22
+            // 
+            this.Column22.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column22.HeaderText = "Número de Nomina";
+            this.Column22.Name = "Column22";
+            this.Column22.Width = 160;
+            // 
+            // Column23
+            // 
+            this.Column23.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column23.HeaderText = "Grado de Estudios";
+            this.Column23.Name = "Column23";
+            this.Column23.Width = 152;
+            // 
+            // Column24
+            // 
+            this.Column24.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column24.HeaderText = "Dirección";
+            this.Column24.Name = "Column24";
+            this.Column24.Width = 105;
+            // 
+            // Column25
+            // 
+            this.Column25.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column25.HeaderText = "Puesto o Jefatura";
+            this.Column25.Name = "Column25";
+            this.Column25.Width = 148;
+            // 
+            // Column26
+            // 
+            this.Column26.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column26.HeaderText = "Empleados a a su cargo";
+            this.Column26.Name = "Column26";
+            this.Column26.Width = 133;
             // 
             // txtEmpleadosACargo
             // 
@@ -813,7 +1044,20 @@
             // 
             // dgvAdmin
             // 
+            this.dgvAdmin.AllowUserToAddRows = false;
+            this.dgvAdmin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvAdmin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAdmin.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column27,
+            this.Column28,
+            this.Column29,
+            this.Column30,
+            this.Column31,
+            this.Column32,
+            this.Column33,
+            this.Column34,
+            this.Column35,
+            this.Column36});
             this.dgvAdmin.Location = new System.Drawing.Point(11, 112);
             this.dgvAdmin.Name = "dgvAdmin";
             this.dgvAdmin.Size = new System.Drawing.Size(761, 205);
@@ -948,73 +1192,129 @@
             // 
             this.errorValidacion.ContainerControl = this;
             // 
-            // columNombre
+            // Column27
             // 
-            this.columNombre.HeaderText = "Nombre";
-            this.columNombre.Name = "columNombre";
+            this.Column27.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column27.HeaderText = "Nombre";
+            this.Column27.Name = "Column27";
+            this.Column27.Width = 93;
             // 
-            // columPaterno
+            // Column28
             // 
-            this.columPaterno.HeaderText = "Apellido Paterno";
-            this.columPaterno.Name = "columPaterno";
+            this.Column28.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column28.HeaderText = "Apellido Paterno";
+            this.Column28.Name = "Column28";
+            this.Column28.Width = 142;
             // 
-            // columMaterno
+            // Column29
             // 
-            this.columMaterno.HeaderText = "Apellido Materno";
-            this.columMaterno.Name = "columMaterno";
+            this.Column29.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column29.HeaderText = "Apellido Materno";
+            this.Column29.Name = "Column29";
+            this.Column29.Width = 148;
             // 
-            // columCurp
+            // Column30
             // 
-            this.columCurp.HeaderText = "Curp";
-            this.columCurp.Name = "columCurp";
+            this.Column30.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column30.HeaderText = "Curp";
+            this.Column30.Name = "Column30";
+            this.Column30.Width = 70;
+            // 
+            // Column31
+            // 
+            this.Column31.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column31.HeaderText = "Teléfono";
+            this.Column31.Name = "Column31";
+            this.Column31.Width = 96;
+            // 
+            // Column32
+            // 
+            this.Column32.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column32.HeaderText = "Número de Empleado";
+            this.Column32.Name = "Column32";
+            this.Column32.Width = 177;
+            // 
+            // Column33
+            // 
+            this.Column33.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column33.HeaderText = "Departamento de adscripción";
+            this.Column33.Name = "Column33";
+            this.Column33.Width = 155;
+            // 
+            // Column34
+            // 
+            this.Column34.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column34.HeaderText = "Dirección";
+            this.Column34.Name = "Column34";
+            this.Column34.Width = 105;
+            // 
+            // Column35
+            // 
+            this.Column35.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column35.HeaderText = "Seguro Social";
+            this.Column35.Name = "Column35";
+            this.Column35.Width = 121;
+            // 
+            // Column36
+            // 
+            this.Column36.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column36.HeaderText = "Correo";
+            this.Column36.Name = "Column36";
+            this.Column36.Width = 86;
             // 
             // Column1
             // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Column1.HeaderText = "Nombre";
             this.Column1.Name = "Column1";
+            this.Column1.Width = 93;
             // 
             // Column3
             // 
-            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Column3.HeaderText = "Apellido Materno";
             this.Column3.Name = "Column3";
+            this.Column3.Width = 148;
+            // 
+            // Column37
+            // 
+            this.Column37.HeaderText = "Apellido Materno";
+            this.Column37.Name = "Column37";
             // 
             // Column4
             // 
-            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Column4.HeaderText = "Curp";
             this.Column4.Name = "Column4";
+            this.Column4.Width = 70;
             // 
             // Column5
             // 
-            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Column5.HeaderText = "Teléfono";
             this.Column5.Name = "Column5";
+            this.Column5.Width = 96;
             // 
             // Column6
             // 
-            this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Column6.HeaderText = "Número de Nómina";
             this.Column6.Name = "Column6";
+            this.Column6.Width = 160;
             // 
             // Column7
             // 
-            this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Column7.HeaderText = "Grado de estudios";
             this.Column7.Name = "Column7";
+            this.Column7.Width = 154;
             // 
             // Column8
             // 
-            this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Column8.HeaderText = "Área académica";
             this.Column8.Name = "Column8";
-            // 
-            // Column2
-            // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column2.HeaderText = "Apellido Paterno";
-            this.Column2.Name = "Column2";
+            this.Column8.Width = 146;
             // 
             // Form1
             // 
@@ -1128,18 +1428,48 @@
         private System.Windows.Forms.ErrorProvider errorValidacion;
         private System.Windows.Forms.DateTimePicker dtFecNacimiento;
         private System.Windows.Forms.DateTimePicker dtFecIngreso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column17;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column18;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column19;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column20;
+        private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.Button btnNuevoDocente;
         private System.Windows.Forms.DataGridViewTextBoxColumn columNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn columPaterno;
         private System.Windows.Forms.DataGridViewTextBoxColumn columMaterno;
         private System.Windows.Forms.DataGridViewTextBoxColumn columCurp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column21;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column22;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column23;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column24;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column25;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column26;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column27;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column28;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column29;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column30;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column31;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column32;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column33;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column34;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column35;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column36;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column37;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
     }
 }
 

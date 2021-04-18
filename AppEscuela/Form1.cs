@@ -9,8 +9,29 @@ namespace AppEscuela
         public Form1()
         {
             InitializeComponent();
+            cmbGenero.Items.Add("Femenino");
+            cmbGenero.Items.Add("Masculino");
+
+            string[] estados = {"Aguascalientes","Baja California","Baja California","Campeche",
+                "Chiapas","Chihuahua","Ciudad de México","Coahuila","Colima","Durango",
+                "Guanajuato","Guerrero","Hidalgo","Jalisco","México","Michoacán","Morelos",
+                "Nayarit","Nuevo León","Oaxaca","Puebla","Querétaro","Quintana Roo",
+                "San Luis Potosí","Sinaloa","Sonora","Tabasco","Tamaulipas","Tlaxcala",
+                "Veracruz","Yucatán","Zacatecas" };
+            List<string> estad = new List<string>();
+            //estad.Add(estados);
+            //void getEstados()
+            //{
+            //    foreach(string estadosMex in estados)
+            //    {
+            //        estad.Add((estados);
+            //    }
+            //} 
+            cmbEstadoProcedencia.Items.Add(ValidarAMaterno());
         }
+
         //-----------------------------------------------------------------------------------------
+        List<Alumno> ListaAlumnos = new List<Alumno>();
         private void btnGuardarAlumno_Click(object sender, EventArgs e)
         {
             //Los metodos de las siguietes validaciones se encuentran en la parte inferior
@@ -451,6 +472,7 @@ namespace AppEscuela
         }
 
         //-----------------------------------------------------------------------------------------------
+        
         private void btnGuardarDirec_Click(object sender, EventArgs e)
         {
             //Los metodos de las siguietes validaciones se encuentran en la parte inferior
@@ -519,35 +541,85 @@ namespace AppEscuela
         private void btnMostrarAlumno_Click(object sender, EventArgs e)
         {
            
+
+
+            Alumno alumno = new Alumno();
+            alumno.nombre = txtNombre.Text;
+            alumno.APaterno = txtApellidoPaterno.Text;
+            alumno.AMaterno = txtApellidoMaterno.Text;
+            alumno.Curp = txtCurp.Text;
+            alumno.Telefono = long.Parse(txtTelefono.Text);
+            alumno.numControl = Convert.ToInt32(txtNumControl.Text);
+            alumno.fecNacimiento = dtFecNacimiento.Value;
+            alumno.genero = cmbGenero.Text;
+            alumno.edad = int.Parse(txtEdad.Text);
+            alumno.fecIngreso = dtFecIngreso.Value;
+            alumno.EstadoProcedencia = cmbEstadoProcedencia.Text;
+            alumno.EscuelaProcedencia = txtEscuelaProcedencia.Text;
+            ListaAlumnos.Add(alumno);
+
+            dgvAlumno.DataSource = null;
+            int n = dgvAlumno.Rows.Add();
+            dgvAlumno.Rows[n].Cells[0].Value = alumno.nombre;
+            dgvAlumno.Rows[n].Cells[1].Value = alumno.APaterno;
+            dgvAlumno.Rows[n].Cells[2].Value = alumno.AMaterno;
+            dgvAlumno.Rows[n].Cells[3].Value = alumno.Curp;
+            dgvAlumno.Rows[n].Cells[4].Value = alumno.Telefono;
+            dgvAlumno.Rows[n].Cells[5].Value = alumno.fecNacimiento;
+            dgvAlumno.Rows[n].Cells[6].Value = alumno.genero;
+            dgvAlumno.Rows[n].Cells[7].Value = alumno.edad;
+            dgvAlumno.Rows[n].Cells[8].Value = alumno.edad;
+            dgvAlumno.Rows[n].Cells[9].Value = alumno.fecIngreso;
+            dgvAlumno.Rows[n].Cells[10].Value = alumno.EstadoProcedencia;
+            dgvAlumno.Rows[n].Cells[11].Value = alumno.EscuelaProcedencia;
         }
 
         private void btnMostrarDocente_Click(object sender, EventArgs e)
         {
+            
             Docente docenteEscuela = new Docente();
             docenteEscuela.nombre = txtNombre.Text;
             docenteEscuela.APaterno = txtApellidoPaterno.Text;
             docenteEscuela.AMaterno = txtApellidoMaterno.Text;
             docenteEscuela.Curp = txtCurp.Text;
-            docenteEscuela.Telefono = Convert.ToUInt32(txtTelefono.Text);
-            //////ListaDocentes.Add(docenteEscuela);
+            docenteEscuela.Telefono = long.Parse(txtTelefono.Text);
+            docenteEscuela.numNomina = Convert.ToInt32(txtNominaDocente.Text);
+            docenteEscuela.gradEstudios = txtGradEstudDocente.Text;
+            docenteEscuela.areaAcademica = txtAreaAcademica.Text;
+            
             //dgvDocente.Columns.Add("ColumNombre", "Nombre");
             //dgvDocente.Columns.Add("ColumPaterno", "Apellido Paterno");
             //dgvDocente.Columns.Add("ColumMaterno", "Apellido Materno");
             //dgvDocente.Columns.Add("ColumCurp", "Curp");
             //dgvDocente.Columns.Add("ColumTelefono", "Télefono");
-
+            ListaDocentes.Add(docenteEscuela);
+           
             dgvDocente.DataSource = null;
             int n = dgvDocente.Rows.Add();
-            dgvDocente.Rows[n].Cells[0].Value = txtNombre.Text;
-            dgvDocente.Rows[n].Cells[1].Value = txtApellidoPaterno.Text;
-            dgvDocente.Rows[n].Cells[2].Value = txtApellidoMaterno.Text;
-            dgvDocente.Rows[n].Cells[3].Value = txtCurp.Text;
-            dgvDocente.Rows[n].Cells[4].Value = txtTelefono.Text;
-            dgvDocente.Rows[n].Cells[5].Value = txtNominaDocente.Text;
-            dgvDocente.Rows[n].Cells[6].Value = txtGradEstudDocente.Text;
-            dgvDocente.Rows[n].Cells[7].Value = txtAreaAcademica.Text;
+            dgvDocente.Rows[n].Cells[0].Value = docenteEscuela.nombre;
+            dgvDocente.Rows[n].Cells[1].Value = docenteEscuela.APaterno;
+            dgvDocente.Rows[n].Cells[2].Value = docenteEscuela.AMaterno;
+            dgvDocente.Rows[n].Cells[3].Value = docenteEscuela.Curp;
+            dgvDocente.Rows[n].Cells[4].Value = docenteEscuela.Telefono;
+            dgvDocente.Rows[n].Cells[5].Value = docenteEscuela.numNomina;
+            dgvDocente.Rows[n].Cells[6].Value = docenteEscuela.gradEstudios;
+            dgvDocente.Rows[n].Cells[7].Value = docenteEscuela.areaAcademica;
             //dgvDocente.DataSource = null;
             //dgvDocente.DataSource = dgvDocente.Columns.Count.CompareTo(ListaDocentes);
+
+        }
+
+        private void btnNuevoDocente_Click(object sender, EventArgs e)
+        {
+            txtNombre.Clear();
+            txtApellidoPaterno.Clear();
+            txtApellidoMaterno.Clear();
+            txtCurp.Clear();
+            txtTelefono.Clear();
+            txtRfc.Clear();
+            txtNominaDocente.Clear();
+            txtGradEstudDocente.Clear();
+            txtAreaAcademica.Clear();
         }
     }
 }
