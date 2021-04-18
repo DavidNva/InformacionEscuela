@@ -9,10 +9,10 @@ namespace AppEscuela
     class Alumno:Persona
     {
         public int numControl { get; set; }
-        public DateTime fecNacimiento { get; set; }
+        public string fecNacimiento { get; set; }
         public string genero { get; set; }
         public int edad { get; set; }
-        public DateTime fecIngreso { get; set; }
+        public string fecIngreso { get; set; }
         public string EstadoProcedencia { get; set; }
         public string EscuelaProcedencia { get; set; }
     }

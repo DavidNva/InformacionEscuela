@@ -9,29 +9,27 @@ namespace AppEscuela
         public Form1()
         {
             InitializeComponent();
+            //Agregamos items al combo Genero
             cmbGenero.Items.Add("Femenino");
             cmbGenero.Items.Add("Masculino");
-
+            //Como son 32 estados, entonces con un array ingresamos todos los estados de Mex
             string[] estados = {"Aguascalientes","Baja California","Baja California","Campeche",
                 "Chiapas","Chihuahua","Ciudad de México","Coahuila","Colima","Durango",
                 "Guanajuato","Guerrero","Hidalgo","Jalisco","México","Michoacán","Morelos",
                 "Nayarit","Nuevo León","Oaxaca","Puebla","Querétaro","Quintana Roo",
                 "San Luis Potosí","Sinaloa","Sonora","Tabasco","Tamaulipas","Tlaxcala",
                 "Veracruz","Yucatán","Zacatecas" };
-            List<string> estad = new List<string>();
-            //estad.Add(estados);
-            //void getEstados()
-            //{
-            //    foreach(string estadosMex in estados)
-            //    {
-            //        estad.Add((estados);
-            //    }
-            //} 
-            cmbEstadoProcedencia.Items.Add(ValidarAMaterno());
+
+            for (int i = 0; i < estados.Length; i++)//Lo leemos con un for
+            {
+                cmbEstadoProcedencia.Items.Add(estados[i]);//Es decir, que cada item sera de 
+                //a cuerdo al numero que recorra
+            }
         }
 
         //-----------------------------------------------------------------------------------------
-        List<Alumno> ListaAlumnos = new List<Alumno>();
+        List<Alumno> ListaAlumnos = new List<Alumno>();//Creacion de lista o coleccion para 
+        //guardar los datos de alumno
         private void btnGuardarAlumno_Click(object sender, EventArgs e)
         {
             //Los metodos de las siguietes validaciones se encuentran en la parte inferior
@@ -65,8 +63,11 @@ namespace AppEscuela
             {
                 return;
             }
+            //Hecha las validaciones, se confirma el guardado de datos
             MessageBox.Show("Los datos se guardaron correctamente", "Datos Alumnos", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+        //Como esatremos ocupando las mismas validaciones 4 veces, entonces creamos un metodo
+        //para solo llamar a la funcion cuando sea necesaria
         private void RecopilacionValidacionPersona()
         {
             if (ValidarNombre() == false)//Persona
@@ -472,7 +473,7 @@ namespace AppEscuela
         }
 
         //-----------------------------------------------------------------------------------------------
-        
+
         private void btnGuardarDirec_Click(object sender, EventArgs e)
         {
             //Los metodos de las siguietes validaciones se encuentran en la parte inferior
@@ -540,23 +541,26 @@ namespace AppEscuela
 
         private void btnMostrarAlumno_Click(object sender, EventArgs e)
         {
-           
-
-
+            if (ValidarNombre() == false)//Persona
+            {
+                return;
+            }
+            //Instanciamos un objeto de la clase Alumno
             Alumno alumno = new Alumno();
+            //Igualamos las propiedades de dicho objeto con las texBox, o ComboBox...
             alumno.nombre = txtNombre.Text;
             alumno.APaterno = txtApellidoPaterno.Text;
             alumno.AMaterno = txtApellidoMaterno.Text;
             alumno.Curp = txtCurp.Text;
             alumno.Telefono = long.Parse(txtTelefono.Text);
             alumno.numControl = Convert.ToInt32(txtNumControl.Text);
-            alumno.fecNacimiento = dtFecNacimiento.Value;
+            alumno.fecNacimiento = dtFecNacimiento.Text;
             alumno.genero = cmbGenero.Text;
             alumno.edad = int.Parse(txtEdad.Text);
-            alumno.fecIngreso = dtFecIngreso.Value;
+            alumno.fecIngreso = dtFecIngreso.Text;
             alumno.EstadoProcedencia = cmbEstadoProcedencia.Text;
             alumno.EscuelaProcedencia = txtEscuelaProcedencia.Text;
-            ListaAlumnos.Add(alumno);
+            ListaAlumnos.Add(alumno);//Lo añadimos a la lista o coleccion creada anteriormente
 
             dgvAlumno.DataSource = null;
             int n = dgvAlumno.Rows.Add();
@@ -565,18 +569,37 @@ namespace AppEscuela
             dgvAlumno.Rows[n].Cells[2].Value = alumno.AMaterno;
             dgvAlumno.Rows[n].Cells[3].Value = alumno.Curp;
             dgvAlumno.Rows[n].Cells[4].Value = alumno.Telefono;
-            dgvAlumno.Rows[n].Cells[5].Value = alumno.fecNacimiento;
-            dgvAlumno.Rows[n].Cells[6].Value = alumno.genero;
-            dgvAlumno.Rows[n].Cells[7].Value = alumno.edad;
+            dgvAlumno.Rows[n].Cells[5].Value = alumno.numControl;
+            dgvAlumno.Rows[n].Cells[6].Value = alumno.fecNacimiento;
+            dgvAlumno.Rows[n].Cells[7].Value = alumno.genero;
             dgvAlumno.Rows[n].Cells[8].Value = alumno.edad;
             dgvAlumno.Rows[n].Cells[9].Value = alumno.fecIngreso;
             dgvAlumno.Rows[n].Cells[10].Value = alumno.EstadoProcedencia;
             dgvAlumno.Rows[n].Cells[11].Value = alumno.EscuelaProcedencia;
         }
-
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            txtNombre.Clear();
+            txtApellidoPaterno.Clear();
+            txtApellidoMaterno.Clear();
+            txtCurp.Clear();
+            txtTelefono.Clear();
+            txtNumControl.Clear();
+            dtFecNacimiento.Text = null;
+            cmbGenero.Text = null;
+            txtEdad.Clear();
+            dtFecIngreso.Text = null;
+            cmbEstadoProcedencia.Text = null;
+            txtEscuelaProcedencia.Clear();
+        }
         private void btnMostrarDocente_Click(object sender, EventArgs e)
         {
-            
+            if (ValidarNombre() == false)//Si da clic en Mostrar y no hay nada guardado
+                //mostrará error de validacion en la casilla txtNombre, de esta forma el
+                //programa no caé
+            {
+                return;
+            }
             Docente docenteEscuela = new Docente();
             docenteEscuela.nombre = txtNombre.Text;
             docenteEscuela.APaterno = txtApellidoPaterno.Text;
@@ -586,14 +609,14 @@ namespace AppEscuela
             docenteEscuela.numNomina = Convert.ToInt32(txtNominaDocente.Text);
             docenteEscuela.gradEstudios = txtGradEstudDocente.Text;
             docenteEscuela.areaAcademica = txtAreaAcademica.Text;
-            
+
             //dgvDocente.Columns.Add("ColumNombre", "Nombre");
             //dgvDocente.Columns.Add("ColumPaterno", "Apellido Paterno");
             //dgvDocente.Columns.Add("ColumMaterno", "Apellido Materno");
             //dgvDocente.Columns.Add("ColumCurp", "Curp");
             //dgvDocente.Columns.Add("ColumTelefono", "Télefono");
             ListaDocentes.Add(docenteEscuela);
-           
+
             dgvDocente.DataSource = null;
             int n = dgvDocente.Rows.Add();
             dgvDocente.Rows[n].Cells[0].Value = docenteEscuela.nombre;
@@ -621,5 +644,7 @@ namespace AppEscuela
             txtGradEstudDocente.Clear();
             txtAreaAcademica.Clear();
         }
+
+        
     }
 }
