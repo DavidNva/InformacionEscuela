@@ -1,0 +1,10 @@
+D:\Documentos\David Nava-Proyectos de programacion\Clase de POO- Semestre II\C#\AppEscuela\AppEscuela\bin\Debug\AppEscuela.exe.config
+D:\Documentos\David Nava-Proyectos de programacion\Clase de POO- Semestre II\C#\AppEscuela\AppEscuela\bin\Debug\AppEscuela.exe
+D:\Documentos\David Nava-Proyectos de programacion\Clase de POO- Semestre II\C#\AppEscuela\AppEscuela\bin\Debug\AppEscuela.pdb
+D:\Documentos\David Nava-Proyectos de programacion\Clase de POO- Semestre II\C#\AppEscuela\AppEscuela\obj\Debug\AppEscuela.csprojAssemblyReference.cache
+D:\Documentos\David Nava-Proyectos de programacion\Clase de POO- Semestre II\C#\AppEscuela\AppEscuela\obj\Debug\AppEscuela.Form1.resources
+D:\Documentos\David Nava-Proyectos de programacion\Clase de POO- Semestre II\C#\AppEscuela\AppEscuela\obj\Debug\AppEscuela.Properties.Resources.resources
+D:\Documentos\David Nava-Proyectos de programacion\Clase de POO- Semestre II\C#\AppEscuela\AppEscuela\obj\Debug\AppEscuela.csproj.GenerateResource.cache
+D:\Documentos\David Nava-Proyectos de programacion\Clase de POO- Semestre II\C#\AppEscuela\AppEscuela\obj\Debug\AppEscuela.csproj.CoreCompileInputs.cache
+D:\Documentos\David Nava-Proyectos de programacion\Clase de POO- Semestre II\C#\AppEscuela\AppEscuela\obj\Debug\AppEscuela.exe
+D:\Documentos\David Nava-Proyectos de programacion\Clase de POO- Semestre II\C#\AppEscuela\AppEscuela\obj\Debug\AppEscuela.pdb
