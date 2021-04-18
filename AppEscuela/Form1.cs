@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AppEscuela
@@ -50,7 +44,7 @@ namespace AppEscuela
             {
                 return;
             }
-            MessageBox.Show("Los datos se guardaron correctamente", "Confirmacion Guardar Datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Los datos se guardaron correctamente", "Datos Alumnos", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         private void RecopilacionValidacionPersona()
         {
@@ -225,7 +219,7 @@ namespace AppEscuela
                 return true;
             }
         }
-       
+
         private bool ValidarEscuelaProcedencia()
         {
             if (string.IsNullOrEmpty(txtEscuelaProcedencia.Text))
@@ -432,6 +426,7 @@ namespace AppEscuela
             }
         }
         //----------------------------------------------------------------------------------------------
+        List<Docente> ListaDocentes = new List<Docente>();
         private void btnGuardarDocente_Click(object sender, EventArgs e)
         {
             //Los metodos de las siguietes validaciones se encuentran en la parte inferior
@@ -452,9 +447,9 @@ namespace AppEscuela
             {
                 return;
             }
-            MessageBox.Show("Los datos se guardaron correctamente", "Confirmacion Guardar Datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Los datos se guardaron correctamente", "Datos docente", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-        
+
         //-----------------------------------------------------------------------------------------------
         private void btnGuardarDirec_Click(object sender, EventArgs e)
         {
@@ -484,14 +479,14 @@ namespace AppEscuela
             {
                 return;
             }
-            MessageBox.Show("Los datos se guardaron correctamente", "Confirmacion Guardar Datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Los datos se guardaron correctamente", "Datos Directivo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-       
+
         //------------------------------------------------------------------------------------------------
         private void btnGuardarAdmin_Click(object sender, EventArgs e)
         {
             //Los metodos de las siguietes validaciones se encuentran en la parte inferior
-            
+
             RecopilacionValidacionPersona();//5
             if (ValidarRfc() == false)//Empleado
             {
@@ -501,23 +496,58 @@ namespace AppEscuela
             {
                 return;
             }
-            else if (ValidarDepartamentoAdscripcion() == false)//Admin
+            if (ValidarDepartamentoAdscripcion() == false)//Admin
             {
                 return;
             }
-            else if (ValidarDireccionAdmin() == false)//Admin
+            if (ValidarDireccionAdmin() == false)//Admin
             {
                 return;
             }
-            else if (ValidarSeguroSocial() == false)//Admin
+            if (ValidarSeguroSocial() == false)//Admin
             {
                 return;
             }
-            else if (ValidarCorreo() == false)//Admin
+            if (ValidarCorreo() == false)//Admin
             {
                 return;
             }
-            MessageBox.Show("Los datos se guardaron correctamente", "Confirmacion Guardar Datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            MessageBox.Show("Los datos se guardaron correctamente", "Datos Administrativo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnMostrarAlumno_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void btnMostrarDocente_Click(object sender, EventArgs e)
+        {
+            Docente docenteEscuela = new Docente();
+            docenteEscuela.nombre = txtNombre.Text;
+            docenteEscuela.APaterno = txtApellidoPaterno.Text;
+            docenteEscuela.AMaterno = txtApellidoMaterno.Text;
+            docenteEscuela.Curp = txtCurp.Text;
+            docenteEscuela.Telefono = Convert.ToUInt32(txtTelefono.Text);
+            //////ListaDocentes.Add(docenteEscuela);
+            //dgvDocente.Columns.Add("ColumNombre", "Nombre");
+            //dgvDocente.Columns.Add("ColumPaterno", "Apellido Paterno");
+            //dgvDocente.Columns.Add("ColumMaterno", "Apellido Materno");
+            //dgvDocente.Columns.Add("ColumCurp", "Curp");
+            //dgvDocente.Columns.Add("ColumTelefono", "Télefono");
+
+            dgvDocente.DataSource = null;
+            int n = dgvDocente.Rows.Add();
+            dgvDocente.Rows[n].Cells[0].Value = txtNombre.Text;
+            dgvDocente.Rows[n].Cells[1].Value = txtApellidoPaterno.Text;
+            dgvDocente.Rows[n].Cells[2].Value = txtApellidoMaterno.Text;
+            dgvDocente.Rows[n].Cells[3].Value = txtCurp.Text;
+            dgvDocente.Rows[n].Cells[4].Value = txtTelefono.Text;
+            dgvDocente.Rows[n].Cells[5].Value = txtNominaDocente.Text;
+            dgvDocente.Rows[n].Cells[6].Value = txtGradEstudDocente.Text;
+            dgvDocente.Rows[n].Cells[7].Value = txtAreaAcademica.Text;
+            //dgvDocente.DataSource = null;
+            //dgvDocente.DataSource = dgvDocente.Columns.Count.CompareTo(ListaDocentes);
         }
     }
 }

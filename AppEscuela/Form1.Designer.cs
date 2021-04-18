@@ -105,6 +105,18 @@
             this.txtRfc = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.errorValidacion = new System.Windows.Forms.ErrorProvider(this.components);
+            this.columNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columPaterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columMaterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columCurp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -232,7 +244,7 @@
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.tabControl1);
             this.panel2.Location = new System.Drawing.Point(0, 120);
             this.panel2.Name = "panel2";
@@ -241,6 +253,7 @@
             // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -312,6 +325,7 @@
             this.btnMostrarAlumno.TabIndex = 23;
             this.btnMostrarAlumno.Text = "Mostrar";
             this.btnMostrarAlumno.UseVisualStyleBackColor = true;
+            this.btnMostrarAlumno.Click += new System.EventHandler(this.btnMostrarAlumno_Click);
             // 
             // btnGuardarAlumno
             // 
@@ -462,6 +476,7 @@
             // 
             // tabControl2
             // 
+            this.tabControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl2.Controls.Add(this.tabPage3);
             this.tabControl2.Controls.Add(this.tabPage4);
             this.tabControl2.Controls.Add(this.tabPage5);
@@ -501,6 +516,7 @@
             this.btnMostrarDocente.TabIndex = 40;
             this.btnMostrarDocente.Text = "Mostrar";
             this.btnMostrarDocente.UseVisualStyleBackColor = true;
+            this.btnMostrarDocente.Click += new System.EventHandler(this.btnMostrarDocente_Click);
             // 
             // btnGuardarDocente
             // 
@@ -517,7 +533,17 @@
             // 
             // dgvDocente
             // 
+            this.dgvDocente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDocente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDocente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6,
+            this.Column7,
+            this.Column8,
+            this.Column2});
             this.dgvDocente.Location = new System.Drawing.Point(9, 116);
             this.dgvDocente.Name = "dgvDocente";
             this.dgvDocente.Size = new System.Drawing.Size(761, 205);
@@ -631,6 +657,11 @@
             // dgvDirec
             // 
             this.dgvDirec.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDirec.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.columNombre,
+            this.columPaterno,
+            this.columMaterno,
+            this.columCurp});
             this.dgvDirec.Location = new System.Drawing.Point(11, 112);
             this.dgvDirec.Name = "dgvDirec";
             this.dgvDirec.Size = new System.Drawing.Size(761, 205);
@@ -917,6 +948,74 @@
             // 
             this.errorValidacion.ContainerControl = this;
             // 
+            // columNombre
+            // 
+            this.columNombre.HeaderText = "Nombre";
+            this.columNombre.Name = "columNombre";
+            // 
+            // columPaterno
+            // 
+            this.columPaterno.HeaderText = "Apellido Paterno";
+            this.columPaterno.Name = "columPaterno";
+            // 
+            // columMaterno
+            // 
+            this.columMaterno.HeaderText = "Apellido Materno";
+            this.columMaterno.Name = "columMaterno";
+            // 
+            // columCurp
+            // 
+            this.columCurp.HeaderText = "Curp";
+            this.columCurp.Name = "columCurp";
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column1.HeaderText = "Nombre";
+            this.Column1.Name = "Column1";
+            // 
+            // Column3
+            // 
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column3.HeaderText = "Apellido Materno";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column4.HeaderText = "Curp";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column5.HeaderText = "Teléfono";
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column6.HeaderText = "Número de Nómina";
+            this.Column6.Name = "Column6";
+            // 
+            // Column7
+            // 
+            this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column7.HeaderText = "Grado de estudios";
+            this.Column7.Name = "Column7";
+            // 
+            // Column8
+            // 
+            this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column8.HeaderText = "Área académica";
+            this.Column8.Name = "Column8";
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column2.HeaderText = "Apellido Paterno";
+            this.Column2.Name = "Column2";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1029,6 +1128,18 @@
         private System.Windows.Forms.ErrorProvider errorValidacion;
         private System.Windows.Forms.DateTimePicker dtFecNacimiento;
         private System.Windows.Forms.DateTimePicker dtFecIngreso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columPaterno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columMaterno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columCurp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
     }
 }
 
