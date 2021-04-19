@@ -163,7 +163,7 @@ namespace AppEscuela
         }
         private bool ValidarTelefono()
         {
-           
+
             if (string.IsNullOrEmpty(txtNombre.Text))
             {
                 errorValidacion.SetError(txtTelefono, "Debes ingresar tu número de télefono");
@@ -289,8 +289,8 @@ namespace AppEscuela
         //Validaciones de Docente
         private bool ValidarNominaDocente()
         {
-            int nomina;
-            if (!int.TryParse(txtNominaDocente.Text, out nomina) || txtNominaDocente.Text == "")
+            int nominaDocente;
+            if (!int.TryParse(txtNominaDocente.Text, out nominaDocente) || txtNominaDocente.Text == "")
             {
                 errorValidacion.SetError(txtNominaDocente, "Debes ingresar tu número de nómina");
                 return false;
@@ -331,8 +331,8 @@ namespace AppEscuela
         //Validaciones Directivo
         private bool ValidarNominaDirec()
         {
-            int nomina;
-            if (!int.TryParse(txtNominaDirec.Text, out nomina) || txtNominaDirec.Text == "")
+            int nominaDirec;
+            if (!int.TryParse(txtNominaDirec.Text, out nominaDirec) || txtNominaDirec.Text == "")
             {
                 errorValidacion.SetError(txtNominaDirec, "Debes ingresar tu número de nómina");
                 return false;
@@ -491,7 +491,8 @@ namespace AppEscuela
             docenteEscuela.APaterno = txtApellidoPaterno.Text;
             docenteEscuela.AMaterno = txtApellidoMaterno.Text;
             docenteEscuela.Curp = txtCurp.Text;
-            docenteEscuela.Telefono =txtTelefono.Text;
+            docenteEscuela.Telefono = txtTelefono.Text;
+            docenteEscuela.rfc = txtRfc.Text;
             docenteEscuela.numNomina = Convert.ToInt32(txtNominaDocente.Text);
             docenteEscuela.gradEstudios = txtGradEstudDocente.Text;
             docenteEscuela.areaAcademica = txtAreaAcademica.Text;
@@ -500,7 +501,8 @@ namespace AppEscuela
         }
 
         //-----------------------------------------------------------------------------------------------
-
+        List<Directivo> ListaDirectivo = new List<Directivo>();
+        Directivo directivo = new Directivo();
         private void btnGuardarDirec_Click(object sender, EventArgs e)
         {
             //Los metodos de las siguietes validaciones se encuentran en la parte inferior
@@ -529,10 +531,24 @@ namespace AppEscuela
             {
                 return;
             }
+            directivo.nombre = txtNombre.Text;
+            directivo.APaterno = txtApellidoPaterno.Text;
+            directivo.AMaterno = txtApellidoMaterno.Text;
+            directivo.Curp = txtCurp.Text;
+            directivo.Telefono = txtTelefono.Text;
+            directivo.rfc = txtRfc.Text;
+            directivo.numNomina = Convert.ToInt32(txtNominaDirec.Text);
+            directivo.gradEstudios = txtGradEstudDirec.Text;
+            directivo.direccion = txtDireccionDirec.Text;
+            directivo.puestoJefatura = txtPuesto.Text;
+            directivo.EmpleadosCargo = Convert.ToInt32(txtEmpleadosACargo.Text);
+            ListaDirectivo.Add(directivo);
             MessageBox.Show("Los datos se guardaron correctamente", "Datos Directivo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         //------------------------------------------------------------------------------------------------
+        List<Administrativo> ListaAdministrativo = new List<Administrativo>();
+        Administrativo administrativo = new Administrativo();
         private void btnGuardarAdmin_Click(object sender, EventArgs e)
         {
             //Los metodos de las siguietes validaciones se encuentran en la parte inferior
@@ -562,7 +578,17 @@ namespace AppEscuela
             {
                 return;
             }
-
+            administrativo.nombre = txtNombre.Text;
+            administrativo.APaterno = txtApellidoPaterno.Text;
+            administrativo.AMaterno = txtApellidoMaterno.Text;
+            administrativo.Curp = txtCurp.Text;
+            administrativo.Telefono = txtTelefono.Text;
+            administrativo.rfc = txtRfc.Text;
+            administrativo.numEmpleado = Convert.ToInt32(txtNumEmpleado.Text);
+            administrativo.departamentoAdscripcion = txtDepartAdscripcion.Text;
+            administrativo.direccion = txtDireccionAdmin.Text;
+            administrativo.seguroSocial = txtSeguroSocial.Text;
+            administrativo.correo = txtCorreo.Text;
             MessageBox.Show("Los datos se guardaron correctamente", "Datos Administrativo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -607,12 +633,12 @@ namespace AppEscuela
         private void btnMostrarDocente_Click(object sender, EventArgs e)
         {
             if (ValidarNombre() == false)//Si da clic en Mostrar y no hay nada guardado
-                //mostrará error de validacion en la casilla txtNombre, de esta forma el
-                //programa no caé
+                                         //mostrará error de validacion en la casilla txtNombre, de esta forma el
+                                         //programa no caé
             {
                 return;
             }
-            
+
 
             dgvDocente.DataSource = null;
             int n = dgvDocente.Rows.Add();
@@ -621,9 +647,10 @@ namespace AppEscuela
             dgvDocente.Rows[n].Cells[2].Value = docenteEscuela.AMaterno;
             dgvDocente.Rows[n].Cells[3].Value = docenteEscuela.Curp;
             dgvDocente.Rows[n].Cells[4].Value = docenteEscuela.Telefono;
-            dgvDocente.Rows[n].Cells[5].Value = docenteEscuela.numNomina;
-            dgvDocente.Rows[n].Cells[6].Value = docenteEscuela.gradEstudios;
-            dgvDocente.Rows[n].Cells[7].Value = docenteEscuela.areaAcademica;
+            dgvDocente.Rows[n].Cells[5].Value = docenteEscuela.rfc;
+            dgvDocente.Rows[n].Cells[6].Value = docenteEscuela.numNomina;
+            dgvDocente.Rows[n].Cells[7].Value = docenteEscuela.gradEstudios;
+            dgvDocente.Rows[n].Cells[8].Value = docenteEscuela.areaAcademica;
             //dgvDocente.DataSource = null;
             //dgvDocente.DataSource = dgvDocente.Columns.Count.CompareTo(ListaDocentes);
 
@@ -642,6 +669,80 @@ namespace AppEscuela
             txtAreaAcademica.Clear();
         }
 
-        
+        private void btnMostrarDirec_Click(object sender, EventArgs e)
+        {
+            if (ValidarNombre() == false)
+            {
+                return;
+            }
+            dgvDirec.DataSource = null;
+            int n = dgvDirec.Rows.Add();
+            dgvDirec.Rows[n].Cells[0].Value = directivo.nombre;
+            dgvDirec.Rows[n].Cells[1].Value = directivo.APaterno;
+            dgvDirec.Rows[n].Cells[2].Value = directivo.AMaterno;
+            dgvDirec.Rows[n].Cells[3].Value = directivo.Curp;
+            dgvDirec.Rows[n].Cells[4].Value = directivo.Telefono;
+            dgvDirec.Rows[n].Cells[5].Value = directivo.rfc;
+            dgvDirec.Rows[n].Cells[6].Value = directivo.numNomina;
+            dgvDirec.Rows[n].Cells[7].Value = directivo.gradEstudios;
+            dgvDirec.Rows[n].Cells[8].Value = directivo.direccion;
+            dgvDirec.Rows[n].Cells[9].Value = directivo.puestoJefatura;
+            dgvDirec.Rows[n].Cells[10].Value = directivo.EmpleadosCargo;
+        }
+
+        private void btnNuevoDirec_Click(object sender, EventArgs e)
+        {
+
+            txtNombre.Clear();
+            txtApellidoPaterno.Clear();
+            txtApellidoMaterno.Clear();
+            txtCurp.Clear();
+            txtTelefono.Clear();
+            txtRfc.Clear();
+            txtNominaDirec.Clear();
+            txtGradEstudDirec.Clear();
+            txtDireccionDirec.Clear();
+            txtPuesto.Clear();
+            txtEmpleadosACargo.Clear();
+        }
+
+        private void btnMostrarAdmin_Click(object sender, EventArgs e)
+        {
+            if (ValidarNombre() == false)//Si da clic en Mostrar y no hay nada guardado
+                                         //mostrará error de validacion en la casilla txtNombre, de esta forma el
+                                         //programa no caé
+            {
+                return;
+            }
+            dgvDirec.DataSource = null;
+            int n = dgvAdmin.Rows.Add();
+            dgvAdmin.Rows[n].Cells[0].Value = administrativo.nombre;
+            dgvAdmin.Rows[n].Cells[1].Value = administrativo.APaterno;
+            dgvAdmin.Rows[n].Cells[2].Value = administrativo.AMaterno;
+            dgvAdmin.Rows[n].Cells[3].Value = administrativo.Curp;
+            dgvAdmin.Rows[n].Cells[4].Value = administrativo.Telefono;
+            dgvAdmin.Rows[n].Cells[5].Value = administrativo.rfc;
+            dgvAdmin.Rows[n].Cells[6].Value = administrativo.numEmpleado;
+            dgvAdmin.Rows[n].Cells[7].Value = administrativo.departamentoAdscripcion;
+            dgvAdmin.Rows[n].Cells[8].Value = administrativo.direccion;
+            dgvAdmin.Rows[n].Cells[9].Value = administrativo.seguroSocial;
+            dgvAdmin.Rows[n].Cells[10].Value = administrativo.correo;
+            
+        }
+
+        private void btnNuevoAdmin_Click(object sender, EventArgs e)
+        {
+            txtNombre.Clear();
+            txtApellidoPaterno.Clear();
+            txtApellidoMaterno.Clear();
+            txtCurp.Clear();
+            txtTelefono.Clear();
+            txtRfc.Clear();
+            txtNumEmpleado.Clear();
+            txtDepartAdscripcion.Clear();
+            txtDireccionAdmin.Clear();
+            txtSeguroSocial.Clear();
+            txtCorreo.Clear();
+        }
     }
 }

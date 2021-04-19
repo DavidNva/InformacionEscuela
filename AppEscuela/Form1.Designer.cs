@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtTelefono = new System.Windows.Forms.TextBox();
@@ -86,6 +87,7 @@
             this.Column37 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -105,6 +107,7 @@
             this.columMaterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columCurp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column38 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -130,6 +133,7 @@
             this.Column29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column39 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -331,7 +335,7 @@
             this.btnNuevoAlumno.Location = new System.Drawing.Point(679, 121);
             this.btnNuevoAlumno.Name = "btnNuevoAlumno";
             this.btnNuevoAlumno.Size = new System.Drawing.Size(105, 26);
-            this.btnNuevoAlumno.TabIndex = 25;
+            this.btnNuevoAlumno.TabIndex = 14;
             this.btnNuevoAlumno.Text = "Nuevo";
             this.btnNuevoAlumno.UseVisualStyleBackColor = true;
             this.btnNuevoAlumno.Click += new System.EventHandler(this.btnNuevoAlumno_Click);
@@ -373,7 +377,7 @@
             this.dgvAlumno.Location = new System.Drawing.Point(11, 188);
             this.dgvAlumno.Name = "dgvAlumno";
             this.dgvAlumno.Size = new System.Drawing.Size(778, 197);
-            this.dgvAlumno.TabIndex = 24;
+            this.dgvAlumno.TabIndex = 15;
             // 
             // Column9
             // 
@@ -467,7 +471,7 @@
             this.btnMostrarAlumno.Location = new System.Drawing.Point(553, 121);
             this.btnMostrarAlumno.Name = "btnMostrarAlumno";
             this.btnMostrarAlumno.Size = new System.Drawing.Size(105, 26);
-            this.btnMostrarAlumno.TabIndex = 23;
+            this.btnMostrarAlumno.TabIndex = 13;
             this.btnMostrarAlumno.Text = "Mostrar";
             this.btnMostrarAlumno.UseVisualStyleBackColor = true;
             this.btnMostrarAlumno.Click += new System.EventHandler(this.btnMostrarAlumno_Click);
@@ -480,7 +484,7 @@
             this.btnGuardarAlumno.Location = new System.Drawing.Point(408, 121);
             this.btnGuardarAlumno.Name = "btnGuardarAlumno";
             this.btnGuardarAlumno.Size = new System.Drawing.Size(105, 26);
-            this.btnGuardarAlumno.TabIndex = 22;
+            this.btnGuardarAlumno.TabIndex = 12;
             this.btnGuardarAlumno.Text = "Guardar";
             this.btnGuardarAlumno.UseVisualStyleBackColor = true;
             this.btnGuardarAlumno.Click += new System.EventHandler(this.btnGuardarAlumno_Click);
@@ -655,7 +659,7 @@
             this.btnNuevoDocente.Location = new System.Drawing.Point(628, 45);
             this.btnNuevoDocente.Name = "btnNuevoDocente";
             this.btnNuevoDocente.Size = new System.Drawing.Size(105, 26);
-            this.btnNuevoDocente.TabIndex = 41;
+            this.btnNuevoDocente.TabIndex = 11;
             this.btnNuevoDocente.Text = "Nuevo";
             this.btnNuevoDocente.UseVisualStyleBackColor = true;
             this.btnNuevoDocente.Click += new System.EventHandler(this.btnNuevoDocente_Click);
@@ -668,7 +672,7 @@
             this.btnMostrarDocente.Location = new System.Drawing.Point(517, 45);
             this.btnMostrarDocente.Name = "btnMostrarDocente";
             this.btnMostrarDocente.Size = new System.Drawing.Size(105, 26);
-            this.btnMostrarDocente.TabIndex = 40;
+            this.btnMostrarDocente.TabIndex = 10;
             this.btnMostrarDocente.Text = "Mostrar";
             this.btnMostrarDocente.UseVisualStyleBackColor = true;
             this.btnMostrarDocente.Click += new System.EventHandler(this.btnMostrarDocente_Click);
@@ -681,7 +685,7 @@
             this.btnGuardarDocente.Location = new System.Drawing.Point(401, 45);
             this.btnGuardarDocente.Name = "btnGuardarDocente";
             this.btnGuardarDocente.Size = new System.Drawing.Size(105, 26);
-            this.btnGuardarDocente.TabIndex = 39;
+            this.btnGuardarDocente.TabIndex = 9;
             this.btnGuardarDocente.Text = "Guardar";
             this.btnGuardarDocente.UseVisualStyleBackColor = true;
             this.btnGuardarDocente.Click += new System.EventHandler(this.btnGuardarDocente_Click);
@@ -697,13 +701,14 @@
             this.Column37,
             this.Column4,
             this.Column5,
+            this.Column2,
             this.Column6,
             this.Column7,
             this.Column8});
-            this.dgvDocente.Location = new System.Drawing.Point(-1, 116);
+            this.dgvDocente.Location = new System.Drawing.Point(0, 116);
             this.dgvDocente.Name = "dgvDocente";
-            this.dgvDocente.Size = new System.Drawing.Size(779, 205);
-            this.dgvDocente.TabIndex = 38;
+            this.dgvDocente.Size = new System.Drawing.Size(778, 205);
+            this.dgvDocente.TabIndex = 12;
             // 
             // Column1
             // 
@@ -727,9 +732,9 @@
             // Column4
             // 
             this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column4.HeaderText = "Curp";
+            this.Column4.HeaderText = "CURP";
             this.Column4.Name = "Column4";
-            this.Column4.Width = 70;
+            this.Column4.Width = 75;
             // 
             // Column5
             // 
@@ -737,6 +742,11 @@
             this.Column5.HeaderText = "Teléfono";
             this.Column5.Name = "Column5";
             this.Column5.Width = 96;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "RFC";
+            this.Column2.Name = "Column2";
             // 
             // Column6
             // 
@@ -765,7 +775,7 @@
             this.txtAreaAcademica.Location = new System.Drawing.Point(191, 84);
             this.txtAreaAcademica.Name = "txtAreaAcademica";
             this.txtAreaAcademica.Size = new System.Drawing.Size(161, 26);
-            this.txtAreaAcademica.TabIndex = 26;
+            this.txtAreaAcademica.TabIndex = 8;
             // 
             // label13
             // 
@@ -795,7 +805,7 @@
             this.txtGradEstudDocente.Location = new System.Drawing.Point(191, 48);
             this.txtGradEstudDocente.Name = "txtGradEstudDocente";
             this.txtGradEstudDocente.Size = new System.Drawing.Size(161, 26);
-            this.txtGradEstudDocente.TabIndex = 23;
+            this.txtGradEstudDocente.TabIndex = 7;
             // 
             // txtNominaDocente
             // 
@@ -803,7 +813,7 @@
             this.txtNominaDocente.Location = new System.Drawing.Point(191, 15);
             this.txtNominaDocente.Name = "txtNominaDocente";
             this.txtNominaDocente.Size = new System.Drawing.Size(161, 26);
-            this.txtNominaDocente.TabIndex = 22;
+            this.txtNominaDocente.TabIndex = 6;
             // 
             // label17
             // 
@@ -848,9 +858,10 @@
             this.btnNuevoDirec.Location = new System.Drawing.Point(642, 80);
             this.btnNuevoDirec.Name = "btnNuevoDirec";
             this.btnNuevoDirec.Size = new System.Drawing.Size(105, 26);
-            this.btnNuevoDirec.TabIndex = 42;
+            this.btnNuevoDirec.TabIndex = 13;
             this.btnNuevoDirec.Text = "Nuevo";
             this.btnNuevoDirec.UseVisualStyleBackColor = true;
+            this.btnNuevoDirec.Click += new System.EventHandler(this.btnNuevoDirec_Click);
             // 
             // btnMostrarDirec
             // 
@@ -860,9 +871,10 @@
             this.btnMostrarDirec.Location = new System.Drawing.Point(526, 80);
             this.btnMostrarDirec.Name = "btnMostrarDirec";
             this.btnMostrarDirec.Size = new System.Drawing.Size(105, 26);
-            this.btnMostrarDirec.TabIndex = 39;
+            this.btnMostrarDirec.TabIndex = 12;
             this.btnMostrarDirec.Text = "Mostrar";
             this.btnMostrarDirec.UseVisualStyleBackColor = true;
+            this.btnMostrarDirec.Click += new System.EventHandler(this.btnMostrarDirec_Click);
             // 
             // btnGuardarDirec
             // 
@@ -872,7 +884,7 @@
             this.btnGuardarDirec.Location = new System.Drawing.Point(401, 79);
             this.btnGuardarDirec.Name = "btnGuardarDirec";
             this.btnGuardarDirec.Size = new System.Drawing.Size(105, 26);
-            this.btnGuardarDirec.TabIndex = 38;
+            this.btnGuardarDirec.TabIndex = 11;
             this.btnGuardarDirec.Text = "Guardar";
             this.btnGuardarDirec.UseVisualStyleBackColor = true;
             this.btnGuardarDirec.Click += new System.EventHandler(this.btnGuardarDirec_Click);
@@ -888,15 +900,16 @@
             this.columMaterno,
             this.columCurp,
             this.Column21,
+            this.Column38,
             this.Column22,
             this.Column23,
             this.Column24,
             this.Column25,
             this.Column26});
-            this.dgvDirec.Location = new System.Drawing.Point(-7, 120);
+            this.dgvDirec.Location = new System.Drawing.Point(0, 128);
             this.dgvDirec.Name = "dgvDirec";
-            this.dgvDirec.Size = new System.Drawing.Size(792, 205);
-            this.dgvDirec.TabIndex = 37;
+            this.dgvDirec.Size = new System.Drawing.Size(785, 205);
+            this.dgvDirec.TabIndex = 14;
             // 
             // columNombre
             // 
@@ -922,9 +935,9 @@
             // columCurp
             // 
             this.columCurp.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.columCurp.HeaderText = "Curp";
+            this.columCurp.HeaderText = "CURP";
             this.columCurp.Name = "columCurp";
-            this.columCurp.Width = 70;
+            this.columCurp.Width = 75;
             // 
             // Column21
             // 
@@ -932,6 +945,11 @@
             this.Column21.HeaderText = "Teléfono";
             this.Column21.Name = "Column21";
             this.Column21.Width = 96;
+            // 
+            // Column38
+            // 
+            this.Column38.HeaderText = "RFC";
+            this.Column38.Name = "Column38";
             // 
             // Column22
             // 
@@ -974,7 +992,7 @@
             this.txtEmpleadosACargo.Location = new System.Drawing.Point(601, 43);
             this.txtEmpleadosACargo.Name = "txtEmpleadosACargo";
             this.txtEmpleadosACargo.Size = new System.Drawing.Size(161, 26);
-            this.txtEmpleadosACargo.TabIndex = 36;
+            this.txtEmpleadosACargo.TabIndex = 10;
             // 
             // label21
             // 
@@ -993,7 +1011,7 @@
             this.txtDireccionDirec.Location = new System.Drawing.Point(189, 80);
             this.txtDireccionDirec.Name = "txtDireccionDirec";
             this.txtDireccionDirec.Size = new System.Drawing.Size(161, 26);
-            this.txtDireccionDirec.TabIndex = 34;
+            this.txtDireccionDirec.TabIndex = 8;
             // 
             // label20
             // 
@@ -1012,7 +1030,7 @@
             this.txtPuesto.Location = new System.Drawing.Point(602, 11);
             this.txtPuesto.Name = "txtPuesto";
             this.txtPuesto.Size = new System.Drawing.Size(161, 26);
-            this.txtPuesto.TabIndex = 32;
+            this.txtPuesto.TabIndex = 9;
             // 
             // label15
             // 
@@ -1042,7 +1060,7 @@
             this.txtGradEstudDirec.Location = new System.Drawing.Point(189, 45);
             this.txtGradEstudDirec.Name = "txtGradEstudDirec";
             this.txtGradEstudDirec.Size = new System.Drawing.Size(161, 26);
-            this.txtGradEstudDirec.TabIndex = 29;
+            this.txtGradEstudDirec.TabIndex = 7;
             // 
             // txtNominaDirec
             // 
@@ -1050,7 +1068,7 @@
             this.txtNominaDirec.Location = new System.Drawing.Point(189, 12);
             this.txtNominaDirec.Name = "txtNominaDirec";
             this.txtNominaDirec.Size = new System.Drawing.Size(161, 26);
-            this.txtNominaDirec.TabIndex = 28;
+            this.txtNominaDirec.TabIndex = 6;
             // 
             // label19
             // 
@@ -1096,9 +1114,10 @@
             this.btnNuevoAdmin.Location = new System.Drawing.Point(641, 80);
             this.btnNuevoAdmin.Name = "btnNuevoAdmin";
             this.btnNuevoAdmin.Size = new System.Drawing.Size(105, 26);
-            this.btnNuevoAdmin.TabIndex = 43;
+            this.btnNuevoAdmin.TabIndex = 13;
             this.btnNuevoAdmin.Text = "Nuevo";
             this.btnNuevoAdmin.UseVisualStyleBackColor = true;
+            this.btnNuevoAdmin.Click += new System.EventHandler(this.btnNuevoAdmin_Click);
             // 
             // btnMostrarAdmin
             // 
@@ -1108,9 +1127,10 @@
             this.btnMostrarAdmin.Location = new System.Drawing.Point(526, 80);
             this.btnMostrarAdmin.Name = "btnMostrarAdmin";
             this.btnMostrarAdmin.Size = new System.Drawing.Size(105, 26);
-            this.btnMostrarAdmin.TabIndex = 39;
+            this.btnMostrarAdmin.TabIndex = 12;
             this.btnMostrarAdmin.Text = "Mostrar";
             this.btnMostrarAdmin.UseVisualStyleBackColor = true;
+            this.btnMostrarAdmin.Click += new System.EventHandler(this.btnMostrarAdmin_Click);
             // 
             // btnGuardarAdmin
             // 
@@ -1120,7 +1140,7 @@
             this.btnGuardarAdmin.Location = new System.Drawing.Point(401, 79);
             this.btnGuardarAdmin.Name = "btnGuardarAdmin";
             this.btnGuardarAdmin.Size = new System.Drawing.Size(105, 26);
-            this.btnGuardarAdmin.TabIndex = 38;
+            this.btnGuardarAdmin.TabIndex = 11;
             this.btnGuardarAdmin.Text = "Guardar";
             this.btnGuardarAdmin.UseVisualStyleBackColor = true;
             this.btnGuardarAdmin.Click += new System.EventHandler(this.btnGuardarAdmin_Click);
@@ -1136,15 +1156,16 @@
             this.Column29,
             this.Column30,
             this.Column31,
+            this.Column39,
             this.Column32,
             this.Column33,
             this.Column34,
             this.Column35,
             this.Column36});
-            this.dgvAdmin.Location = new System.Drawing.Point(0, 116);
+            this.dgvAdmin.Location = new System.Drawing.Point(0, 124);
             this.dgvAdmin.Name = "dgvAdmin";
             this.dgvAdmin.Size = new System.Drawing.Size(778, 205);
-            this.dgvAdmin.TabIndex = 37;
+            this.dgvAdmin.TabIndex = 14;
             // 
             // Column27
             // 
@@ -1181,6 +1202,11 @@
             this.Column31.Name = "Column31";
             this.Column31.Width = 96;
             // 
+            // Column39
+            // 
+            this.Column39.HeaderText = "RFC";
+            this.Column39.Name = "Column39";
+            // 
             // Column32
             // 
             this.Column32.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -1212,6 +1238,8 @@
             // Column36
             // 
             this.Column36.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.Column36.DefaultCellStyle = dataGridViewCellStyle1;
             this.Column36.HeaderText = "Correo";
             this.Column36.Name = "Column36";
             this.Column36.Width = 86;
@@ -1219,10 +1247,11 @@
             // txtCorreo
             // 
             this.txtCorreo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCorreo.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.txtCorreo.Location = new System.Drawing.Point(489, 43);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(273, 26);
-            this.txtCorreo.TabIndex = 36;
+            this.txtCorreo.TabIndex = 10;
             // 
             // label22
             // 
@@ -1241,7 +1270,7 @@
             this.txtDireccionAdmin.Location = new System.Drawing.Point(189, 80);
             this.txtDireccionAdmin.Name = "txtDireccionAdmin";
             this.txtDireccionAdmin.Size = new System.Drawing.Size(161, 26);
-            this.txtDireccionAdmin.TabIndex = 34;
+            this.txtDireccionAdmin.TabIndex = 8;
             // 
             // label23
             // 
@@ -1260,7 +1289,7 @@
             this.txtSeguroSocial.Location = new System.Drawing.Point(537, 12);
             this.txtSeguroSocial.Name = "txtSeguroSocial";
             this.txtSeguroSocial.Size = new System.Drawing.Size(225, 26);
-            this.txtSeguroSocial.TabIndex = 32;
+            this.txtSeguroSocial.TabIndex = 9;
             // 
             // label24
             // 
@@ -1290,7 +1319,7 @@
             this.txtDepartAdscripcion.Location = new System.Drawing.Point(189, 45);
             this.txtDepartAdscripcion.Name = "txtDepartAdscripcion";
             this.txtDepartAdscripcion.Size = new System.Drawing.Size(161, 26);
-            this.txtDepartAdscripcion.TabIndex = 29;
+            this.txtDepartAdscripcion.TabIndex = 7;
             // 
             // txtNumEmpleado
             // 
@@ -1298,7 +1327,7 @@
             this.txtNumEmpleado.Location = new System.Drawing.Point(189, 12);
             this.txtNumEmpleado.Name = "txtNumEmpleado";
             this.txtNumEmpleado.Size = new System.Drawing.Size(161, 26);
-            this.txtNumEmpleado.TabIndex = 28;
+            this.txtNumEmpleado.TabIndex = 6;
             // 
             // label26
             // 
@@ -1328,7 +1357,7 @@
             this.txtRfc.Location = new System.Drawing.Point(53, 6);
             this.txtRfc.Name = "txtRfc";
             this.txtRfc.Size = new System.Drawing.Size(161, 26);
-            this.txtRfc.TabIndex = 22;
+            this.txtRfc.TabIndex = 5;
             // 
             // label16
             // 
@@ -1471,11 +1500,23 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column20;
         private System.Windows.Forms.Button btnNuevoAlumno;
         private System.Windows.Forms.Button btnNuevoDocente;
+        private System.Windows.Forms.Button btnNuevoDirec;
+        private System.Windows.Forms.Button btnNuevoAdmin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column37;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn columNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn columPaterno;
         private System.Windows.Forms.DataGridViewTextBoxColumn columMaterno;
         private System.Windows.Forms.DataGridViewTextBoxColumn columCurp;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column21;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column38;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column22;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column23;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column24;
@@ -1486,21 +1527,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column29;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column30;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column31;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column39;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column32;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column33;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column34;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column35;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column36;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column37;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.Button btnNuevoDirec;
-        private System.Windows.Forms.Button btnNuevoAdmin;
     }
 }
 
