@@ -44,7 +44,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.btnNuevo = new System.Windows.Forms.Button();
+            this.btnNuevoAlumno = new System.Windows.Forms.Button();
             this.dtFecIngreso = new System.Windows.Forms.DateTimePicker();
             this.dtFecNacimiento = new System.Windows.Forms.DateTimePicker();
             this.dgvAlumno = new System.Windows.Forms.DataGridView();
@@ -81,6 +81,14 @@
             this.btnMostrarDocente = new System.Windows.Forms.Button();
             this.btnGuardarDocente = new System.Windows.Forms.Button();
             this.dgvDocente = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column37 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtAreaAcademica = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -88,6 +96,7 @@
             this.txtNominaDocente = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.btnNuevoDirec = new System.Windows.Forms.Button();
             this.btnMostrarDirec = new System.Windows.Forms.Button();
             this.btnGuardarDirec = new System.Windows.Forms.Button();
             this.dgvDirec = new System.Windows.Forms.DataGridView();
@@ -112,9 +121,20 @@
             this.txtNominaDirec = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.btnNuevoAdmin = new System.Windows.Forms.Button();
             this.btnMostrarAdmin = new System.Windows.Forms.Button();
             this.btnGuardarAdmin = new System.Windows.Forms.Button();
             this.dgvAdmin = new System.Windows.Forms.DataGridView();
+            this.Column27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.txtDireccionAdmin = new System.Windows.Forms.TextBox();
@@ -129,26 +149,6 @@
             this.txtRfc = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.errorValidacion = new System.Windows.Forms.ErrorProvider(this.components);
-            this.Column27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column37 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -297,7 +297,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.btnNuevo);
+            this.tabPage1.Controls.Add(this.btnNuevoAlumno);
             this.tabPage1.Controls.Add(this.dtFecIngreso);
             this.tabPage1.Controls.Add(this.dtFecNacimiento);
             this.tabPage1.Controls.Add(this.dgvAlumno);
@@ -323,18 +323,18 @@
             this.tabPage1.Text = "Alumno";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // btnNuevo
+            // btnNuevoAlumno
             // 
-            this.btnNuevo.FlatAppearance.BorderSize = 0;
-            this.btnNuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevo.Location = new System.Drawing.Point(679, 121);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(105, 26);
-            this.btnNuevo.TabIndex = 25;
-            this.btnNuevo.Text = "Nuevo";
-            this.btnNuevo.UseVisualStyleBackColor = true;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            this.btnNuevoAlumno.FlatAppearance.BorderSize = 0;
+            this.btnNuevoAlumno.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnNuevoAlumno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevoAlumno.Location = new System.Drawing.Point(679, 121);
+            this.btnNuevoAlumno.Name = "btnNuevoAlumno";
+            this.btnNuevoAlumno.Size = new System.Drawing.Size(105, 26);
+            this.btnNuevoAlumno.TabIndex = 25;
+            this.btnNuevoAlumno.Text = "Nuevo";
+            this.btnNuevoAlumno.UseVisualStyleBackColor = true;
+            this.btnNuevoAlumno.Click += new System.EventHandler(this.btnNuevoAlumno_Click);
             // 
             // dtFecIngreso
             // 
@@ -629,6 +629,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.tabPage3.Controls.Add(this.btnNuevoDocente);
             this.tabPage3.Controls.Add(this.btnMostrarDocente);
             this.tabPage3.Controls.Add(this.btnGuardarDocente);
@@ -645,7 +646,6 @@
             this.tabPage3.Size = new System.Drawing.Size(778, 323);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Docente";
-            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // btnNuevoDocente
             // 
@@ -700,10 +700,64 @@
             this.Column6,
             this.Column7,
             this.Column8});
-            this.dgvDocente.Location = new System.Drawing.Point(9, 116);
+            this.dgvDocente.Location = new System.Drawing.Point(-1, 116);
             this.dgvDocente.Name = "dgvDocente";
-            this.dgvDocente.Size = new System.Drawing.Size(761, 205);
+            this.dgvDocente.Size = new System.Drawing.Size(779, 205);
             this.dgvDocente.TabIndex = 38;
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column1.HeaderText = "Nombre";
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 93;
+            // 
+            // Column3
+            // 
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column3.HeaderText = "Apellido Materno";
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 148;
+            // 
+            // Column37
+            // 
+            this.Column37.HeaderText = "Apellido Materno";
+            this.Column37.Name = "Column37";
+            // 
+            // Column4
+            // 
+            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column4.HeaderText = "Curp";
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 70;
+            // 
+            // Column5
+            // 
+            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column5.HeaderText = "Teléfono";
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 96;
+            // 
+            // Column6
+            // 
+            this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column6.HeaderText = "Número de Nómina";
+            this.Column6.Name = "Column6";
+            this.Column6.Width = 160;
+            // 
+            // Column7
+            // 
+            this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column7.HeaderText = "Grado de estudios";
+            this.Column7.Name = "Column7";
+            this.Column7.Width = 154;
+            // 
+            // Column8
+            // 
+            this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column8.HeaderText = "Área académica";
+            this.Column8.Name = "Column8";
+            this.Column8.Width = 146;
             // 
             // txtAreaAcademica
             // 
@@ -764,7 +818,8 @@
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.button1);
+            this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.tabPage4.Controls.Add(this.btnNuevoDirec);
             this.tabPage4.Controls.Add(this.btnMostrarDirec);
             this.tabPage4.Controls.Add(this.btnGuardarDirec);
             this.tabPage4.Controls.Add(this.dgvDirec);
@@ -784,7 +839,18 @@
             this.tabPage4.Size = new System.Drawing.Size(778, 323);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Directivo";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // btnNuevoDirec
+            // 
+            this.btnNuevoDirec.FlatAppearance.BorderSize = 0;
+            this.btnNuevoDirec.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnNuevoDirec.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevoDirec.Location = new System.Drawing.Point(642, 80);
+            this.btnNuevoDirec.Name = "btnNuevoDirec";
+            this.btnNuevoDirec.Size = new System.Drawing.Size(105, 26);
+            this.btnNuevoDirec.TabIndex = 42;
+            this.btnNuevoDirec.Text = "Nuevo";
+            this.btnNuevoDirec.UseVisualStyleBackColor = true;
             // 
             // btnMostrarDirec
             // 
@@ -827,9 +893,9 @@
             this.Column24,
             this.Column25,
             this.Column26});
-            this.dgvDirec.Location = new System.Drawing.Point(11, 116);
+            this.dgvDirec.Location = new System.Drawing.Point(-7, 120);
             this.dgvDirec.Name = "dgvDirec";
-            this.dgvDirec.Size = new System.Drawing.Size(761, 205);
+            this.dgvDirec.Size = new System.Drawing.Size(792, 205);
             this.dgvDirec.TabIndex = 37;
             // 
             // columNombre
@@ -999,7 +1065,8 @@
             // 
             // tabPage5
             // 
-            this.tabPage5.Controls.Add(this.button2);
+            this.tabPage5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.tabPage5.Controls.Add(this.btnNuevoAdmin);
             this.tabPage5.Controls.Add(this.btnMostrarAdmin);
             this.tabPage5.Controls.Add(this.btnGuardarAdmin);
             this.tabPage5.Controls.Add(this.dgvAdmin);
@@ -1020,7 +1087,18 @@
             this.tabPage5.Size = new System.Drawing.Size(778, 323);
             this.tabPage5.TabIndex = 2;
             this.tabPage5.Text = "Administrativo:";
-            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // btnNuevoAdmin
+            // 
+            this.btnNuevoAdmin.FlatAppearance.BorderSize = 0;
+            this.btnNuevoAdmin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnNuevoAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevoAdmin.Location = new System.Drawing.Point(641, 80);
+            this.btnNuevoAdmin.Name = "btnNuevoAdmin";
+            this.btnNuevoAdmin.Size = new System.Drawing.Size(105, 26);
+            this.btnNuevoAdmin.TabIndex = 43;
+            this.btnNuevoAdmin.Text = "Nuevo";
+            this.btnNuevoAdmin.UseVisualStyleBackColor = true;
             // 
             // btnMostrarAdmin
             // 
@@ -1063,10 +1141,80 @@
             this.Column34,
             this.Column35,
             this.Column36});
-            this.dgvAdmin.Location = new System.Drawing.Point(11, 112);
+            this.dgvAdmin.Location = new System.Drawing.Point(0, 116);
             this.dgvAdmin.Name = "dgvAdmin";
-            this.dgvAdmin.Size = new System.Drawing.Size(761, 205);
+            this.dgvAdmin.Size = new System.Drawing.Size(778, 205);
             this.dgvAdmin.TabIndex = 37;
+            // 
+            // Column27
+            // 
+            this.Column27.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column27.HeaderText = "Nombre";
+            this.Column27.Name = "Column27";
+            this.Column27.Width = 93;
+            // 
+            // Column28
+            // 
+            this.Column28.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column28.HeaderText = "Apellido Paterno";
+            this.Column28.Name = "Column28";
+            this.Column28.Width = 142;
+            // 
+            // Column29
+            // 
+            this.Column29.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column29.HeaderText = "Apellido Materno";
+            this.Column29.Name = "Column29";
+            this.Column29.Width = 148;
+            // 
+            // Column30
+            // 
+            this.Column30.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column30.HeaderText = "Curp";
+            this.Column30.Name = "Column30";
+            this.Column30.Width = 70;
+            // 
+            // Column31
+            // 
+            this.Column31.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column31.HeaderText = "Teléfono";
+            this.Column31.Name = "Column31";
+            this.Column31.Width = 96;
+            // 
+            // Column32
+            // 
+            this.Column32.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column32.HeaderText = "Número de Empleado";
+            this.Column32.Name = "Column32";
+            this.Column32.Width = 177;
+            // 
+            // Column33
+            // 
+            this.Column33.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column33.HeaderText = "Departamento de adscripción";
+            this.Column33.Name = "Column33";
+            this.Column33.Width = 155;
+            // 
+            // Column34
+            // 
+            this.Column34.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column34.HeaderText = "Dirección";
+            this.Column34.Name = "Column34";
+            this.Column34.Width = 105;
+            // 
+            // Column35
+            // 
+            this.Column35.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column35.HeaderText = "Seguro Social";
+            this.Column35.Name = "Column35";
+            this.Column35.Width = 121;
+            // 
+            // Column36
+            // 
+            this.Column36.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column36.HeaderText = "Correo";
+            this.Column36.Name = "Column36";
+            this.Column36.Width = 86;
             // 
             // txtCorreo
             // 
@@ -1197,154 +1345,6 @@
             // 
             this.errorValidacion.ContainerControl = this;
             // 
-            // Column27
-            // 
-            this.Column27.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column27.HeaderText = "Nombre";
-            this.Column27.Name = "Column27";
-            this.Column27.Width = 93;
-            // 
-            // Column28
-            // 
-            this.Column28.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column28.HeaderText = "Apellido Paterno";
-            this.Column28.Name = "Column28";
-            this.Column28.Width = 142;
-            // 
-            // Column29
-            // 
-            this.Column29.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column29.HeaderText = "Apellido Materno";
-            this.Column29.Name = "Column29";
-            this.Column29.Width = 148;
-            // 
-            // Column30
-            // 
-            this.Column30.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column30.HeaderText = "Curp";
-            this.Column30.Name = "Column30";
-            this.Column30.Width = 70;
-            // 
-            // Column31
-            // 
-            this.Column31.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column31.HeaderText = "Teléfono";
-            this.Column31.Name = "Column31";
-            this.Column31.Width = 96;
-            // 
-            // Column32
-            // 
-            this.Column32.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column32.HeaderText = "Número de Empleado";
-            this.Column32.Name = "Column32";
-            this.Column32.Width = 177;
-            // 
-            // Column33
-            // 
-            this.Column33.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column33.HeaderText = "Departamento de adscripción";
-            this.Column33.Name = "Column33";
-            this.Column33.Width = 155;
-            // 
-            // Column34
-            // 
-            this.Column34.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column34.HeaderText = "Dirección";
-            this.Column34.Name = "Column34";
-            this.Column34.Width = 105;
-            // 
-            // Column35
-            // 
-            this.Column35.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column35.HeaderText = "Seguro Social";
-            this.Column35.Name = "Column35";
-            this.Column35.Width = 121;
-            // 
-            // Column36
-            // 
-            this.Column36.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column36.HeaderText = "Correo";
-            this.Column36.Name = "Column36";
-            this.Column36.Width = 86;
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column1.HeaderText = "Nombre";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 93;
-            // 
-            // Column3
-            // 
-            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column3.HeaderText = "Apellido Materno";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 148;
-            // 
-            // Column37
-            // 
-            this.Column37.HeaderText = "Apellido Materno";
-            this.Column37.Name = "Column37";
-            // 
-            // Column4
-            // 
-            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column4.HeaderText = "Curp";
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 70;
-            // 
-            // Column5
-            // 
-            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column5.HeaderText = "Teléfono";
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 96;
-            // 
-            // Column6
-            // 
-            this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column6.HeaderText = "Número de Nómina";
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 160;
-            // 
-            // Column7
-            // 
-            this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column7.HeaderText = "Grado de estudios";
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 154;
-            // 
-            // Column8
-            // 
-            this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column8.HeaderText = "Área académica";
-            this.Column8.Name = "Column8";
-            this.Column8.Width = 146;
-            // 
-            // button1
-            // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(642, 80);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(105, 26);
-            this.button1.TabIndex = 42;
-            this.button1.Text = "Nuevo";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(641, 80);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(105, 26);
-            this.button2.TabIndex = 43;
-            this.button2.Text = "Nuevo";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1469,7 +1469,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column18;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column19;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column20;
-        private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.Button btnNuevoAlumno;
         private System.Windows.Forms.Button btnNuevoDocente;
         private System.Windows.Forms.DataGridViewTextBoxColumn columNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn columPaterno;
@@ -1499,8 +1499,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnNuevoDirec;
+        private System.Windows.Forms.Button btnNuevoAdmin;
     }
 }
 

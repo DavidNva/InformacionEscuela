@@ -70,7 +70,7 @@ namespace AppEscuela
             alumno.APaterno = txtApellidoPaterno.Text;
             alumno.AMaterno = txtApellidoMaterno.Text;
             alumno.Curp = txtCurp.Text;
-            alumno.Telefono = long.Parse(txtTelefono.Text);
+            alumno.Telefono = txtTelefono.Text;
             alumno.numControl = Convert.ToInt32(txtNumControl.Text);
             alumno.fecNacimiento = dtFecNacimiento.Text;
             alumno.genero = cmbGenero.Text;
@@ -163,8 +163,8 @@ namespace AppEscuela
         }
         private bool ValidarTelefono()
         {
-            int telefono;
-            if (!int.TryParse(txtTelefono.Text, out telefono) || txtTelefono.Text == "")
+           
+            if (string.IsNullOrEmpty(txtNombre.Text))
             {
                 errorValidacion.SetError(txtTelefono, "Debes ingresar tu número de télefono");
                 return false;
@@ -491,7 +491,7 @@ namespace AppEscuela
             docenteEscuela.APaterno = txtApellidoPaterno.Text;
             docenteEscuela.AMaterno = txtApellidoMaterno.Text;
             docenteEscuela.Curp = txtCurp.Text;
-            docenteEscuela.Telefono = long.Parse(txtTelefono.Text);
+            docenteEscuela.Telefono =txtTelefono.Text;
             docenteEscuela.numNomina = Convert.ToInt32(txtNominaDocente.Text);
             docenteEscuela.gradEstudios = txtGradEstudDocente.Text;
             docenteEscuela.areaAcademica = txtAreaAcademica.Text;
@@ -589,7 +589,7 @@ namespace AppEscuela
             dgvAlumno.Rows[n].Cells[10].Value = alumno.EstadoProcedencia;
             dgvAlumno.Rows[n].Cells[11].Value = alumno.EscuelaProcedencia;
         }
-        private void btnNuevo_Click(object sender, EventArgs e)
+        private void btnNuevoAlumno_Click(object sender, EventArgs e)
         {
             txtNombre.Clear();
             txtApellidoPaterno.Clear();
