@@ -147,6 +147,8 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -762,6 +764,7 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.button1);
             this.tabPage4.Controls.Add(this.btnMostrarDirec);
             this.tabPage4.Controls.Add(this.btnGuardarDirec);
             this.tabPage4.Controls.Add(this.dgvDirec);
@@ -788,7 +791,7 @@
             this.btnMostrarDirec.FlatAppearance.BorderSize = 0;
             this.btnMostrarDirec.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnMostrarDirec.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMostrarDirec.Location = new System.Drawing.Point(602, 80);
+            this.btnMostrarDirec.Location = new System.Drawing.Point(526, 80);
             this.btnMostrarDirec.Name = "btnMostrarDirec";
             this.btnMostrarDirec.Size = new System.Drawing.Size(105, 26);
             this.btnMostrarDirec.TabIndex = 39;
@@ -800,7 +803,7 @@
             this.btnGuardarDirec.FlatAppearance.BorderSize = 0;
             this.btnGuardarDirec.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnGuardarDirec.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardarDirec.Location = new System.Drawing.Point(453, 80);
+            this.btnGuardarDirec.Location = new System.Drawing.Point(401, 79);
             this.btnGuardarDirec.Name = "btnGuardarDirec";
             this.btnGuardarDirec.Size = new System.Drawing.Size(105, 26);
             this.btnGuardarDirec.TabIndex = 38;
@@ -996,6 +999,7 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.button2);
             this.tabPage5.Controls.Add(this.btnMostrarAdmin);
             this.tabPage5.Controls.Add(this.btnGuardarAdmin);
             this.tabPage5.Controls.Add(this.dgvAdmin);
@@ -1023,7 +1027,7 @@
             this.btnMostrarAdmin.FlatAppearance.BorderSize = 0;
             this.btnMostrarAdmin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnMostrarAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMostrarAdmin.Location = new System.Drawing.Point(602, 80);
+            this.btnMostrarAdmin.Location = new System.Drawing.Point(526, 80);
             this.btnMostrarAdmin.Name = "btnMostrarAdmin";
             this.btnMostrarAdmin.Size = new System.Drawing.Size(105, 26);
             this.btnMostrarAdmin.TabIndex = 39;
@@ -1035,7 +1039,7 @@
             this.btnGuardarAdmin.FlatAppearance.BorderSize = 0;
             this.btnGuardarAdmin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnGuardarAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardarAdmin.Location = new System.Drawing.Point(453, 80);
+            this.btnGuardarAdmin.Location = new System.Drawing.Point(401, 79);
             this.btnGuardarAdmin.Name = "btnGuardarAdmin";
             this.btnGuardarAdmin.Size = new System.Drawing.Size(105, 26);
             this.btnGuardarAdmin.TabIndex = 38;
@@ -1317,6 +1321,30 @@
             this.Column8.Name = "Column8";
             this.Column8.Width = 146;
             // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(642, 80);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(105, 26);
+            this.button1.TabIndex = 42;
+            this.button1.Text = "Nuevo";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(641, 80);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(105, 26);
+            this.button2.TabIndex = 43;
+            this.button2.Text = "Nuevo";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1471,6 +1499,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
 

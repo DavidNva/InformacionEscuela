@@ -29,7 +29,9 @@ namespace AppEscuela
 
         //-----------------------------------------------------------------------------------------
         List<Alumno> ListaAlumnos = new List<Alumno>();//Creacion de lista o coleccion para 
-        //guardar los datos de alumno
+                                                       //guardar los datos de alumno
+                                                       //Instanciamos un objeto de la clase Alumno
+        Alumno alumno = new Alumno();
         private void btnGuardarAlumno_Click(object sender, EventArgs e)
         {
             //Los metodos de las siguietes validaciones se encuentran en la parte inferior
@@ -63,6 +65,21 @@ namespace AppEscuela
             {
                 return;
             }
+            //Igualamos las propiedades de dicho objeto con las texBox, o ComboBox...
+            alumno.nombre = txtNombre.Text;
+            alumno.APaterno = txtApellidoPaterno.Text;
+            alumno.AMaterno = txtApellidoMaterno.Text;
+            alumno.Curp = txtCurp.Text;
+            alumno.Telefono = long.Parse(txtTelefono.Text);
+            alumno.numControl = Convert.ToInt32(txtNumControl.Text);
+            alumno.fecNacimiento = dtFecNacimiento.Text;
+            alumno.genero = cmbGenero.Text;
+            alumno.edad = int.Parse(txtEdad.Text);
+            alumno.fecIngreso = dtFecIngreso.Text;
+            alumno.EstadoProcedencia = cmbEstadoProcedencia.Text;
+            alumno.EscuelaProcedencia = txtEscuelaProcedencia.Text;
+            ListaAlumnos.Add(alumno);//Lo añadimos a la lista o coleccion creada anteriormente
+
             //Hecha las validaciones, se confirma el guardado de datos
             MessageBox.Show("Los datos se guardaron correctamente", "Datos Alumnos", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
@@ -449,6 +466,7 @@ namespace AppEscuela
         }
         //----------------------------------------------------------------------------------------------
         List<Docente> ListaDocentes = new List<Docente>();
+        Docente docenteEscuela = new Docente();
         private void btnGuardarDocente_Click(object sender, EventArgs e)
         {
             //Los metodos de las siguietes validaciones se encuentran en la parte inferior
@@ -469,6 +487,15 @@ namespace AppEscuela
             {
                 return;
             }
+            docenteEscuela.nombre = txtNombre.Text;
+            docenteEscuela.APaterno = txtApellidoPaterno.Text;
+            docenteEscuela.AMaterno = txtApellidoMaterno.Text;
+            docenteEscuela.Curp = txtCurp.Text;
+            docenteEscuela.Telefono = long.Parse(txtTelefono.Text);
+            docenteEscuela.numNomina = Convert.ToInt32(txtNominaDocente.Text);
+            docenteEscuela.gradEstudios = txtGradEstudDocente.Text;
+            docenteEscuela.areaAcademica = txtAreaAcademica.Text;
+            ListaDocentes.Add(docenteEscuela);
             MessageBox.Show("Los datos se guardaron correctamente", "Datos docente", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -541,27 +568,12 @@ namespace AppEscuela
 
         private void btnMostrarAlumno_Click(object sender, EventArgs e)
         {
-            if (ValidarNombre() == false)//Persona
+            if (ValidarNombre() == false)//Si da clic en Mostrar y no hay nada guardado
+                                         //mostrará error de validacion en la casilla txtNombre, de esta forma el
+                                         //programa no caé
             {
                 return;
             }
-            //Instanciamos un objeto de la clase Alumno
-            Alumno alumno = new Alumno();
-            //Igualamos las propiedades de dicho objeto con las texBox, o ComboBox...
-            alumno.nombre = txtNombre.Text;
-            alumno.APaterno = txtApellidoPaterno.Text;
-            alumno.AMaterno = txtApellidoMaterno.Text;
-            alumno.Curp = txtCurp.Text;
-            alumno.Telefono = long.Parse(txtTelefono.Text);
-            alumno.numControl = Convert.ToInt32(txtNumControl.Text);
-            alumno.fecNacimiento = dtFecNacimiento.Text;
-            alumno.genero = cmbGenero.Text;
-            alumno.edad = int.Parse(txtEdad.Text);
-            alumno.fecIngreso = dtFecIngreso.Text;
-            alumno.EstadoProcedencia = cmbEstadoProcedencia.Text;
-            alumno.EscuelaProcedencia = txtEscuelaProcedencia.Text;
-            ListaAlumnos.Add(alumno);//Lo añadimos a la lista o coleccion creada anteriormente
-
             dgvAlumno.DataSource = null;
             int n = dgvAlumno.Rows.Add();
             dgvAlumno.Rows[n].Cells[0].Value = alumno.nombre;
@@ -600,22 +612,7 @@ namespace AppEscuela
             {
                 return;
             }
-            Docente docenteEscuela = new Docente();
-            docenteEscuela.nombre = txtNombre.Text;
-            docenteEscuela.APaterno = txtApellidoPaterno.Text;
-            docenteEscuela.AMaterno = txtApellidoMaterno.Text;
-            docenteEscuela.Curp = txtCurp.Text;
-            docenteEscuela.Telefono = long.Parse(txtTelefono.Text);
-            docenteEscuela.numNomina = Convert.ToInt32(txtNominaDocente.Text);
-            docenteEscuela.gradEstudios = txtGradEstudDocente.Text;
-            docenteEscuela.areaAcademica = txtAreaAcademica.Text;
-
-            //dgvDocente.Columns.Add("ColumNombre", "Nombre");
-            //dgvDocente.Columns.Add("ColumPaterno", "Apellido Paterno");
-            //dgvDocente.Columns.Add("ColumMaterno", "Apellido Materno");
-            //dgvDocente.Columns.Add("ColumCurp", "Curp");
-            //dgvDocente.Columns.Add("ColumTelefono", "Télefono");
-            ListaDocentes.Add(docenteEscuela);
+            
 
             dgvDocente.DataSource = null;
             int n = dgvDocente.Rows.Add();
