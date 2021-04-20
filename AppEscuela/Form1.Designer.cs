@@ -676,6 +676,7 @@
             // 
             // btnNuevoDocente
             // 
+            this.btnNuevoDocente.Enabled = false;
             this.btnNuevoDocente.FlatAppearance.BorderSize = 0;
             this.btnNuevoDocente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnNuevoDocente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -689,6 +690,7 @@
             // 
             // btnMostrarDocente
             // 
+            this.btnMostrarDocente.Enabled = false;
             this.btnMostrarDocente.FlatAppearance.BorderSize = 0;
             this.btnMostrarDocente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnMostrarDocente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -730,6 +732,7 @@
             this.Column8});
             this.dgvDocente.Location = new System.Drawing.Point(0, 116);
             this.dgvDocente.Name = "dgvDocente";
+            this.dgvDocente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDocente.Size = new System.Drawing.Size(818, 205);
             this.dgvDocente.TabIndex = 12;
             // 
@@ -876,6 +879,7 @@
             // 
             // btnNuevoDirec
             // 
+            this.btnNuevoDirec.Enabled = false;
             this.btnNuevoDirec.FlatAppearance.BorderSize = 0;
             this.btnNuevoDirec.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnNuevoDirec.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -889,6 +893,7 @@
             // 
             // btnMostrarDirec
             // 
+            this.btnMostrarDirec.Enabled = false;
             this.btnMostrarDirec.FlatAppearance.BorderSize = 0;
             this.btnMostrarDirec.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnMostrarDirec.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -932,6 +937,7 @@
             this.Column26});
             this.dgvDirec.Location = new System.Drawing.Point(0, 136);
             this.dgvDirec.Name = "dgvDirec";
+            this.dgvDirec.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDirec.Size = new System.Drawing.Size(825, 205);
             this.dgvDirec.TabIndex = 14;
             // 
@@ -1133,6 +1139,7 @@
             // 
             // btnNuevoAdmin
             // 
+            this.btnNuevoAdmin.Enabled = false;
             this.btnNuevoAdmin.FlatAppearance.BorderSize = 0;
             this.btnNuevoAdmin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnNuevoAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1146,6 +1153,7 @@
             // 
             // btnMostrarAdmin
             // 
+            this.btnMostrarAdmin.Enabled = false;
             this.btnMostrarAdmin.FlatAppearance.BorderSize = 0;
             this.btnMostrarAdmin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnMostrarAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1189,6 +1197,7 @@
             this.Column36});
             this.dgvAdmin.Location = new System.Drawing.Point(0, 132);
             this.dgvAdmin.Name = "dgvAdmin";
+            this.dgvAdmin.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAdmin.Size = new System.Drawing.Size(818, 205);
             this.dgvAdmin.TabIndex = 14;
             // 
@@ -1411,6 +1420,7 @@
             this.btnEliminarDocente.TabIndex = 26;
             this.btnEliminarDocente.Text = "Eliminar";
             this.btnEliminarDocente.UseVisualStyleBackColor = true;
+            this.btnEliminarDocente.Click += new System.EventHandler(this.btnEliminarDocente_Click);
             // 
             // btnEliminarDirec
             // 
@@ -1424,6 +1434,7 @@
             this.btnEliminarDirec.TabIndex = 36;
             this.btnEliminarDirec.Text = "Eliminar";
             this.btnEliminarDirec.UseVisualStyleBackColor = true;
+            this.btnEliminarDirec.Click += new System.EventHandler(this.btnEliminarDirec_Click);
             // 
             // btnEliminarAdmin
             // 
@@ -1437,6 +1448,7 @@
             this.btnEliminarAdmin.TabIndex = 41;
             this.btnEliminarAdmin.Text = "Eliminar";
             this.btnEliminarAdmin.UseVisualStyleBackColor = true;
+            this.btnEliminarAdmin.Click += new System.EventHandler(this.btnEliminarAdmin_Click);
             // 
             // Form1
             // 
