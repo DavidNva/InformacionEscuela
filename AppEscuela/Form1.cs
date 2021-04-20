@@ -79,7 +79,7 @@ namespace AppEscuela
             alumno.EstadoProcedencia = cmbEstadoProcedencia.Text;
             alumno.EscuelaProcedencia = txtEscuelaProcedencia.Text;
             ListaAlumnos.Add(alumno);//Lo añadimos a la lista o coleccion creada anteriormente
-
+            btnMostrarAlumno.Enabled = true;
             //Hecha las validaciones, se confirma el guardado de datos
             MessageBox.Show("Los datos se guardaron correctamente", "Datos Alumnos", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
@@ -614,6 +614,9 @@ namespace AppEscuela
             dgvAlumno.Rows[n].Cells[9].Value = alumno.fecIngreso;
             dgvAlumno.Rows[n].Cells[10].Value = alumno.EstadoProcedencia;
             dgvAlumno.Rows[n].Cells[11].Value = alumno.EscuelaProcedencia;
+            btnNuevoAlumno.Enabled = true;
+            //if (btnMostrarAlumno.Enabled == true) { btnEliminarAlumno.Enabled = true; }
+            btnEliminarAlumno.Enabled = true;
         }
         private void btnNuevoAlumno_Click(object sender, EventArgs e)
         {
@@ -629,6 +632,8 @@ namespace AppEscuela
             dtFecIngreso.Text = null;
             cmbEstadoProcedencia.Text = null;
             txtEscuelaProcedencia.Clear();
+            btnMostrarAlumno.Enabled = false;
+            btnNuevoAlumno.Enabled = false;
         }
         private void btnMostrarDocente_Click(object sender, EventArgs e)
         {
@@ -688,6 +693,7 @@ namespace AppEscuela
             dgvDirec.Rows[n].Cells[8].Value = directivo.direccion;
             dgvDirec.Rows[n].Cells[9].Value = directivo.puestoJefatura;
             dgvDirec.Rows[n].Cells[10].Value = directivo.EmpleadosCargo;
+           
         }
 
         private void btnNuevoDirec_Click(object sender, EventArgs e)
@@ -743,6 +749,29 @@ namespace AppEscuela
             txtDireccionAdmin.Clear();
             txtSeguroSocial.Clear();
             txtCorreo.Clear();
+        }
+
+        private void btnEliminarAlumno_Click(object sender, EventArgs e)
+        {
+            try 
+            {
+                if (dgvAlumno.Enabled == false) { }
+                else
+                {
+                    DialogResult resultado = MessageBox.Show("¿Desea eliminar la fila seleccionada", "Confirme eliminacion",
+                        MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
+                    if (resultado == DialogResult.Yes)
+                    {
+                        int n = dgvAlumno.CurrentRow.Index;
+                        dgvAlumno.Rows.RemoveAt(n);
+                    }
+                }
+            }
+            catch
+            {
+                btnEliminarAlumno.Enabled = false;
+                errorValidacion.SetError(btnEliminarAlumno, "No hay ningun elemento a eliminar");
+            }
         }
     }
 }
