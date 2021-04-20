@@ -126,7 +126,7 @@ namespace AppEscuela
         {
             if (string.IsNullOrEmpty(txtApellidoPaterno.Text))
             {
-                errorValidacion.SetError(txtApellidoPaterno, "Debes ingresar tu apellido paterno");
+                errorValidacion.SetError(txtApellidoPaterno, "Debes ingresar un apellido paterno");
                 return false;
             }
             else
@@ -139,7 +139,7 @@ namespace AppEscuela
         {
             if (string.IsNullOrEmpty(txtApellidoMaterno.Text))
             {
-                errorValidacion.SetError(txtApellidoMaterno, "Debes ingresar tu apellido materno");
+                errorValidacion.SetError(txtApellidoMaterno, "Debes ingresar un apellido materno");
                 return false;
             }
             else
@@ -152,7 +152,7 @@ namespace AppEscuela
         {
             if (string.IsNullOrEmpty(txtCurp.Text))
             {
-                errorValidacion.SetError(txtCurp, "Debes ingresar tu Curp");
+                errorValidacion.SetError(txtCurp, "Debes ingresar Curp");
                 return false;
             }
             else
@@ -164,9 +164,9 @@ namespace AppEscuela
         private bool ValidarTelefono()
         {
 
-            if (string.IsNullOrEmpty(txtNombre.Text))
+            if (string.IsNullOrEmpty(txtTelefono.Text))
             {
-                errorValidacion.SetError(txtTelefono, "Debes ingresar tu número de télefono");
+                errorValidacion.SetError(txtTelefono, "Debes ingresar un número de télefono");
                 return false;
             }
             else
@@ -181,7 +181,7 @@ namespace AppEscuela
             int telefono;
             if (!int.TryParse(txtNumControl.Text, out telefono) || txtNumControl.Text == "")
             {
-                errorValidacion.SetError(txtNumControl, "Debes ingresar tu número de control");
+                errorValidacion.SetError(txtNumControl, "Debes ingresar un número de control");
                 return false;
             }
             else
@@ -208,7 +208,7 @@ namespace AppEscuela
         {
             if (cmbGenero.SelectedItem == null)
             {
-                errorValidacion.SetError(cmbGenero, "Debes elegir un género");
+                errorValidacion.SetError(cmbGenero, "Debes seleccionar un género");
                 return false;
             }
             else
@@ -222,7 +222,7 @@ namespace AppEscuela
             int edad;
             if (!int.TryParse(txtEdad.Text, out edad) || txtEdad.Text == "")
             {
-                errorValidacion.SetError(txtEdad, "Debes ingresar tu edad");
+                errorValidacion.SetError(txtEdad, "Debes ingresar edad");
                 return false;
             }
             else
@@ -249,7 +249,7 @@ namespace AppEscuela
         {
             if (cmbEstadoProcedencia.SelectedItem == null)
             {
-                errorValidacion.SetError(cmbEstadoProcedencia, "Debes elegir tu Estado de Procedencia");
+                errorValidacion.SetError(cmbEstadoProcedencia, "Debes seleccionar Estado de Procedencia");
                 return false;
             }
             else
@@ -263,7 +263,7 @@ namespace AppEscuela
         {
             if (string.IsNullOrEmpty(txtEscuelaProcedencia.Text))
             {
-                errorValidacion.SetError(txtEscuelaProcedencia, "Debes ingresar tu Escuela de Procedencia");
+                errorValidacion.SetError(txtEscuelaProcedencia, "Debes ingresar Escuela de Procedencia");
                 return false;
             }
             else
@@ -277,7 +277,7 @@ namespace AppEscuela
         {
             if (string.IsNullOrEmpty(txtRfc.Text))
             {
-                errorValidacion.SetError(txtRfc, "Debes ingresar tu Rfc");
+                errorValidacion.SetError(txtRfc, "Debes ingresar el Rfc");
                 return false;
             }
             else
@@ -292,7 +292,7 @@ namespace AppEscuela
             int nominaDocente;
             if (!int.TryParse(txtNominaDocente.Text, out nominaDocente) || txtNominaDocente.Text == "")
             {
-                errorValidacion.SetError(txtNominaDocente, "Debes ingresar tu número de nómina");
+                errorValidacion.SetError(txtNominaDocente, "Debes ingresar número de nómina");
                 return false;
             }
             else
@@ -306,7 +306,7 @@ namespace AppEscuela
         {
             if (string.IsNullOrEmpty(txtGradEstudDocente.Text))
             {
-                errorValidacion.SetError(txtGradEstudDocente, "Ingresa tu grado de estudios");
+                errorValidacion.SetError(txtGradEstudDocente, "Debes ingresar grado de estudios");
                 return false;
             }
             else
@@ -319,7 +319,7 @@ namespace AppEscuela
         {
             if (string.IsNullOrEmpty(txtAreaAcademica.Text))
             {
-                errorValidacion.SetError(txtAreaAcademica, "Debes ingresar tu área académica");
+                errorValidacion.SetError(txtAreaAcademica, "Debes ingresar área académica");
                 return false;
             }
             else
@@ -334,7 +334,7 @@ namespace AppEscuela
             int nominaDirec;
             if (!int.TryParse(txtNominaDirec.Text, out nominaDirec) || txtNominaDirec.Text == "")
             {
-                errorValidacion.SetError(txtNominaDirec, "Debes ingresar tu número de nómina");
+                errorValidacion.SetError(txtNominaDirec, "Debes ingresar número de nómina");
                 return false;
             }
             else
@@ -348,7 +348,7 @@ namespace AppEscuela
         {
             if (string.IsNullOrEmpty(txtGradEstudDirec.Text))
             {
-                errorValidacion.SetError(txtGradEstudDirec, "Ingresa tu grado de estudios");
+                errorValidacion.SetError(txtGradEstudDirec, "Ingresa grado de estudios");
                 return false;
             }
             else
@@ -361,7 +361,7 @@ namespace AppEscuela
         {
             if (string.IsNullOrEmpty(txtDireccionDirec.Text))
             {
-                errorValidacion.SetError(txtDireccionDirec, "Ingresa tu dirección");
+                errorValidacion.SetError(txtDireccionDirec, "Ingresa una dirección");
                 return false;
             }
             else
@@ -374,7 +374,7 @@ namespace AppEscuela
         {
             if (string.IsNullOrEmpty(txtPuesto.Text))
             {
-                errorValidacion.SetError(txtPuesto, "Ingresa tu Puesto o Jefatura");
+                errorValidacion.SetError(txtPuesto, "Debes ingresar Puesto o Jefatura");
                 return false;
             }
             else
@@ -403,7 +403,7 @@ namespace AppEscuela
             int numEmpleado;
             if (!int.TryParse(txtNumEmpleado.Text, out numEmpleado) || txtNumEmpleado.Text == "")
             {
-                errorValidacion.SetError(txtNumEmpleado, "Ingresa tu número de empleado");
+                errorValidacion.SetError(txtNumEmpleado, "Ingresa número de empleado");
                 return false;
             }
             else
@@ -416,7 +416,7 @@ namespace AppEscuela
         {
             if (string.IsNullOrEmpty(txtDepartAdscripcion.Text))
             {
-                errorValidacion.SetError(txtDepartAdscripcion, "Ingresa tu Departamento de Adscripción");
+                errorValidacion.SetError(txtDepartAdscripcion, "Ingresa Departamento de Adscripción");
                 return false;
             }
             else
@@ -429,7 +429,7 @@ namespace AppEscuela
         {
             if (string.IsNullOrEmpty(txtDireccionAdmin.Text))
             {
-                errorValidacion.SetError(txtDireccionAdmin, "Ingresa tu dirección");
+                errorValidacion.SetError(txtDireccionAdmin, "Ingresa una dirección");
                 return false;
             }
             else
@@ -442,7 +442,7 @@ namespace AppEscuela
         {
             if (string.IsNullOrEmpty(txtSeguroSocial.Text))
             {
-                errorValidacion.SetError(txtSeguroSocial, "Ingresa tu seguro social");
+                errorValidacion.SetError(txtSeguroSocial, "Ingresa Seguro Social");
                 return false;
             }
             else
@@ -455,7 +455,7 @@ namespace AppEscuela
         {
             if (string.IsNullOrEmpty(txtCorreo.Text))
             {
-                errorValidacion.SetError(txtCorreo, "Ingresa tu correo");
+                errorValidacion.SetError(txtCorreo, "Ingresa un correo");
                 return false;
             }
             else

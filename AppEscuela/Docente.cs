@@ -10,8 +10,6 @@ namespace AppEscuela
     {
         public int numNomina { get; set; }
         public string gradEstudios { get; set; }
-        public string areaAcademica { get; set; }
-
-        
+        public string areaAcademica { get; set; } 
     }
 }
